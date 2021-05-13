@@ -1,0 +1,28 @@
+/*mit ."name" wird die className angesprochen, OHNE Punkt "name" die Poperty selber z.B. [img] überschreibt --> <img>*/
+.w-80 {
+  width: 80%;
+}
+
+.carousel-indicators {
+  width: 180px;
+}
+
+@media screen and (max-width: 960px) {
+  .smallHeader {
+    font-size: 45px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .smallHeader {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}

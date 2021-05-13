@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.pagenotfound,
+.aboutapp {
+  display: flex;
+  height: 94vh;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 23px;
+}
+
+
+
+.smallHeader {
+  font-size: 50px;
+  padding-top: 20px;
+  padding-bottom: 45px;
+}
+
+.bigHeader {
+  font-size: 80px;
+}
+
+
+.pagenotfound {
+  background-image: url("../images/404.jpg");
+  font-size: 100px;
+}
+
+.aboutapp {
+  background-image: url("../images/aboutapp/aboutapp.jpg");
+  font-size: 23px;
+}
+
+.ranking {
+  color: #454542;
+  font-size: 23px;
+}
