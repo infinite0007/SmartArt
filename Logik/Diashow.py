@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import time
-import sys
-import os.path
+import os
+
 
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image
