@@ -8,11 +8,12 @@ from PIL import Image
 amount = 0
 num = 1
 path = "/home/pi/pictures/"
-
+img = ""
 for files in os.listdir(path):
     amount += 1
     print(files.title())
-
+    img = files.title()
+    
 # Configuration for the matrix
 options = RGBMatrixOptions()
 options.rows = 64
@@ -28,10 +29,10 @@ print("Amount of Pictures: " + str(amount))
 #loop to iterate through the picture folder over and over
 while num <= amount and amount != 0:
     if os.listdir(path) !=[]:
-        img = path + "Pic" + str(num) + ".png"
+        _img = path + img
     else:
-        img = "/home/pi/Downloads/CriticalFail.jpeg"    
-    image = Image.open(img)
+        _img = "/home/pi/Downloads/CriticalFail.jpeg"    
+    image = Image.open(_img)
     image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
     matrix.SetImage(image.convert('RGB'))
     num +=1

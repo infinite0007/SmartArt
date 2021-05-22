@@ -33,6 +33,7 @@ def check_folder():
 def print_picture():
     global amount, path, img
     is_checking = False
+    print(is_checking)
     while amount != 0:
         if os.listdir(path) !=[]:
             _img = path + img
@@ -44,7 +45,7 @@ def print_picture():
         time.sleep(5)
     #only reached when there is a Problem
     matrix.SetImage(image.convert('RGB'))
-    time.sleep(3)
+    time.sleep(5)
 
 if __name__ == "__main__":
     if is_checking == False:
