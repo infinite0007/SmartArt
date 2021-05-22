@@ -7,7 +7,7 @@ from PIL import Image
 
 amount = 0
 num = 1
-path = "/home/salah/Downloads/"
+path = "/home/pi/pictures/"
 
 
 options = RGBMatrixOptions()
@@ -37,7 +37,7 @@ def print_picture():
         if os.listdir(path) !=[]:
             _img = path + img
         else:
-            _img = "/home/salah/Downloads/critical_failure.jpeg"    
+            _img = "/home/pi/Downloads/CriticalFail.jpeg"    
         image = Image.open(_img)
         image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
         matrix.SetImage(image.convert('RGB'))
