@@ -12,7 +12,7 @@ img = ""
 for files in os.listdir(path):
     amount += 1
     print(files.title())
-    img = files.title()
+    img = files.title().lower()
     
 # Configuration for the matrix
 options = RGBMatrixOptions()
