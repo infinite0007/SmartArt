@@ -26,8 +26,6 @@ options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafr
 
 matrix = RGBMatrix(options = options)
 
-# Make image fit our screen.
-#print("Amount of Pictures: " + str(amount))
 #loop to iterate through the picture folder over and over
 while True:
     files = os.listdir(path)
@@ -41,6 +39,7 @@ while True:
             #_img = "/home/salah/Pictures/critical_failure.jpeg"    
             _img = "/home/pi/Downloads/criticalfailure.jpeg"    
         image = Image.open(_img)
+        # Make image fit our screen.
         image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
         matrix.SetImage(image.convert('RGB'))
         num +=1
@@ -48,12 +47,5 @@ while True:
         #if num == amount:
             #num = 0
     #only reached when there is a Problem
-    #matrix.SetImage(image.convert('RGB'))
-    #time.sleep(5)
-    '''try:
-        print("Press CTRL-C to stop.")
-        while True:
-            time.sleep(100)
-    except KeyboardInterrupt:
-        sys.exit(0)
-    '''
+    matrix.SetImage(image.convert('RGB'))
+    time.sleep(5)
