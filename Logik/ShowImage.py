@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 import time
-import sys
 import os.path
 
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image
 amount = 0
 num = 1
-path = "/home/pi/pictures/"
-
+path = "/home/pi/Downloads/"
+img = ""
 for files in os.listdir(path):
     amount += 1
     print(files.title())
+    img = files.title()
 
 # Configuration for the matrix
 options = RGBMatrixOptions()
