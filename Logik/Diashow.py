@@ -6,8 +6,8 @@ import glob
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image
 num = 0
-path = "/home/salah/Downloads/"
-#path = "/home/pi/pictures/"
+#path = "/home/salah/Downloads/"
+path = "/home/pi/pictures/"
 img = ""
 
 #list_of_files = glob.glob(path)
@@ -38,7 +38,7 @@ while True:
         if os.listdir(path) !=[]:
             _img = path + img
         else:
-            _img = "/home/salah/Pictures/critical_failure.jpeg"    
+            #_img = "/home/salah/Pictures/critical_failure.jpeg"    
             _img = "/home/pi/Downloads/criticalfailure.jpeg"    
         image = Image.open(_img)
         image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
