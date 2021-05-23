@@ -5,7 +5,7 @@ import CardItem from "./CardItem";
 import Image1 from "../../../images/aboutapp/aboutappcard.jpg";
 import Image2 from "../../../images/plan/plancard.jpg";
 import Image3 from "../../../images/bmi/bmicard.jpg";
-import Image4 from "../../../images/ranking/rankingcard.jpg";
+import Image4 from "../../../images/art/rankingcard.jpg";
 import Image5 from "../../../images/login/logincard.jpg";
 
 // Die verschiedenen Cards aufgelistet

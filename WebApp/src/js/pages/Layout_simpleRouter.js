@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 import Home from "./Home"
 import AboutApp from "./AboutApp"
-import Ranking from "./Ranking"
+import Art from "./Art"
 import PageNotFound from "./PageNotFound";
 ;
 
@@ -25,7 +25,7 @@ export default class Layout extends React.Component {
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/home" component={Home}/>
                         <Route exact path="/app" component={AboutApp}/>
-                        <Route exact path="/ranking" component={Ranking}/>
+                        <Route exact path="/art" component={Art}/>
                         <Route component={PageNotFound}/>
                     </Switch>
                     <Footer/>

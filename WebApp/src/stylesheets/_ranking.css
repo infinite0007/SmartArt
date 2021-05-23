@@ -2,7 +2,7 @@
   color: #fff;
 }
 
-.ranking-section {
+.art-section {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.ranking-section:before {
+.art-section:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -22,7 +22,7 @@
   z-index: 10000;
 }
 
-.ranking-section:after {
+.art-section:after {
   content: '';
   position: absolute;
   top: 0;
@@ -32,7 +32,7 @@
   z-index: 10000;
 }
 
-.ranking-img {
+.art-img {
   position :absolute;
   top: 0;
   left: 0;
