@@ -5,16 +5,15 @@ import glob
 
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image
-amount = 0
 num = 0
 #path = "/home/salah/Downloads/"
 path = "/home/pi/pictures/"
 img = ""
 
-list_of_files = glob.glob(path)
+#list_of_files = glob.glob(path)
 
-latest_file = max(list_of_files, key= os.path.getctime)
-print("latest file: " + str(latest_file))
+#latest_file = max(list_of_files, key= os.path.getctime)
+#print("latest file: " + str(latest_file))
 
 files = os.listdir(path)
 amount = len(files)
@@ -32,7 +31,7 @@ matrix = RGBMatrix(options = options)
 # Make image fit our screen.
 print("Amount of Pictures: " + str(amount))
 #loop to iterate through the picture folder over and over
-while num <= amount and amount != 0:
+while num < amount and amount != 0:
     img = files[num].title().lower()
     if os.listdir(path) !=[]:
         _img = path + img
