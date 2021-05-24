@@ -1,24 +1,31 @@
 require("../../stylesheets/_all.scss");
 import {Container, Row, Col, Button} from "react-bootstrap";
 import React, { useState } from "react";
+import axios from 'axios';
 
 function InsertPicture() {
 
   const [state , setState] = useState({selectedFile: null})
 
   const onChangeHandler = (e) => {
-    console.log(e.target.files[0]) // Nur zum prüfen welche File für Entwicklung
+    console.log(e.target.files[0]) // Nur zum prüfen welche File für Entwicklung / an Stelle 0 ist das aktuelle File und die Details
 
     setState({
-      selectedFile: e.target.files[0],
+      selectedFile: e.target.files[0], // File in state laden
       loaded: 0,
     })
   }
 
-  const onClickHandler = () => {//Weiterarbeiten
+  const onClickHandler = () => { // Wenn der Button gedrückt wird zum hochladen
     const data = new FormData() 
-    data.append('file', this.state.selectedFile)
-  }
+    data.append('file', state.selectedFile)
+    axios.post("http://localhost:8000/upload", data, { 
+      // receive two    parameter endpoint url ,form data
+    })
+    .then(res => { // then print response status
+        console.log(res.statusText)
+    })
+    }
 
   return (
     <div  className="aboutapp">
