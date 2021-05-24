@@ -4,7 +4,7 @@ var multer = require('multer') // Filemanipulation
 var cors = require('cors'); // Erlaubt das nutzen/laden auch von anderen Servern, ansonst von Google gesperrt da Sicherheitsmaßnahme bei Browser
 app.use(cors())
 
-// Erstellen einer Multer-Instanz und festlegung des Zielordners
+// Erstellen einer Multer-Instanz und festlegung des Zielordners wo die Dateien gespeichert werden sollen
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, 'public/matrixPictures')
