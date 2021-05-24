@@ -33,7 +33,7 @@ function InsertPicture() {
         <h1 className="smallHeader">Lassen Sie ein Bild direkt auf der Matrix anzeigen!</h1>
         <Row>
           <Col xs={6} md={{ span: 4, offset: 2 }}>
-            <input type="file" name="file" onChange={onChangeHandler}/>
+            <input type="file" name="file" onChange={onChangeHandler} accept="image/png, image/jpeg"/>
             <Button variant="success" onClick={onClickHandler}>Hochladen</Button>
           </Col>
           <Col xs={6} md={4}>
