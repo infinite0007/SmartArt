@@ -1,12 +1,18 @@
 require("../../stylesheets/_all.scss");
-import React from "react";
-import {Container, Row, Col} from "react-bootstrap";
-import MobileCarousel from "../components/AboutApp/MobileCarousel";
+import {Container, Row, Col, Button} from "react-bootstrap";
+import React, { useState } from "react";
 
 function InsertPicture() {
-  
+
+  const [state , setState] = useState({selectedFile: null})
+
   const onChangeHandler = (e) => {
-    console.log(e.target.files[0])
+    console.log(e.target.files[0]) // Nur zum prüfen welche File für Entwicklung
+
+    setState({
+      selectedFile: e.target.files[0],
+      loaded: 0,
+    })
   }
 
   return (
@@ -16,6 +22,7 @@ function InsertPicture() {
         <Row>
           <Col xs={6} md={{ span: 4, offset: 2 }}>
             <input type="file" name="file" onChange={onChangeHandler}/>
+            <Button variant="success">Hochladen</Button>
           </Col>
           <Col xs={6} md={4}>
             <p>
