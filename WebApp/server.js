@@ -7,7 +7,7 @@ app.use(cors())
 // Erstellen einer Multer-Instanz und festlegung des Zielordners
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'public')
+      cb(null, 'public/matrixPictures')
     },
     filename: function (req, file, cb) {
       cb(null, Date.now() + '-' +file.originalname )
