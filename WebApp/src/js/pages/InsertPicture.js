@@ -15,6 +15,11 @@ function InsertPicture() {
     })
   }
 
+  const onClickHandler = () => {//Weiterarbeiten
+    const data = new FormData() 
+    data.append('file', this.state.selectedFile)
+  }
+
   return (
     <div  className="aboutapp">
       <Container>
@@ -22,7 +27,7 @@ function InsertPicture() {
         <Row>
           <Col xs={6} md={{ span: 4, offset: 2 }}>
             <input type="file" name="file" onChange={onChangeHandler}/>
-            <Button variant="success">Hochladen</Button>
+            <Button variant="success" onClick={onClickHandler}>Hochladen</Button>
           </Col>
           <Col xs={6} md={4}>
             <p>
