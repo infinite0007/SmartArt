@@ -28,6 +28,7 @@ function NavigationBar(props) {
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#app">App</Nav.Link>
+          <Nav.Link href="#insertpicture">Insert Picture</Nav.Link>
           <Nav.Link href="#art">Art</Nav.Link>
         </Nav>
       </Navbar.Collapse>
