@@ -21,7 +21,7 @@ function InsertPicture() {
   const onClickHandler = () => { // Wenn der Button gedrückt wird zum hochladen
     const data = new FormData() 
     data.append('file', state.selectedFile)
-    axios.post("http://localhost:8000/upload", data, { 
+    axios.post("http://" + location.hostname + ":8000/upload", data, { // location.hostname gibt den aktuellen Host wieder, von dem die Seite aufgerufen wird. Somit funktioniert der API-Call auch wenn die WebApp auf einer anderen Maschine im Netz läuft und nicht nur local.
       // receive two    parameter endpoint url ,form data
     })
     .then(res => { // then print response status
