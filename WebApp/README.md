@@ -12,7 +12,7 @@ Install all dependencies.\
 Important before running the project.
 
 ### `npm start`
-**Easiest Way to get started with SmartArt**\
+**Easiest Way to get started with SmartArt**
 
 Runs the SmartArt-Server plus the WebApp with one command.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
