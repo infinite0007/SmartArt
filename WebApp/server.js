@@ -2,6 +2,7 @@ var express = require('express'); // um Server zu erstellen
 var app = express();
 var multer = require('multer') // Filemanipulation
 var cors = require('cors'); // Erlaubt das nutzen/laden auch von anderen Servern, ansonst von Google gesperrt da Sicherheitsmaßnahme bei Browser
+const serverhelper = require('./serverhelper'); // Ausschluss/Filterung von Falschdaten: Die hochgeladene Datei muss ein Bild sein, womöglich wird es sonst ausgenutzt dass jemand andere Dateien wie Malware aufspielen könnte
 app.use(cors())
 
 // Erstellen einer Multer-Instanz und festlegung des Zielordners wo die Dateien gespeichert werden sollen
@@ -15,7 +16,7 @@ var storage = multer.diskStorage({
   })
   
   // Erstellen einer Upload-Instanz zum erhalten einer einzelnen Datei (bei mehreren Dateien(multi-files) eventuell single zu array ändern wenn nötig)
-  var upload = multer({ storage: storage }).single('file')
+  var upload = multer({ storage: storage, fileFilter: serverhelper.imageFilter }).single('file')
   
 app.get('/',function(req,res){ // Falls jemand auf Standard-Adresse einen Call ausführt
     return res.send('Der Server läuft.')
@@ -23,20 +24,25 @@ app.get('/',function(req,res){ // Falls jemand auf Standard-Adresse einen Call a
 
 // Festlegung der API POST Route (URL-Adresse) für den File-Upload
 app.post('/upload',function(req, res) {
+
     
-    upload(req, res, function (err) {
-     
-        if (err instanceof multer.MulterError) {
-            return res.status(500).json(err)
-          // Multer-Fehler aufgetreten beim Upload.
-        } else if (err) {
-            return res.status(500).json(err)
-          // Unbekannter Fehler aufgetreten beim Upload.
-        } 
-        
-        return res.status(200).send(req.file)
-        // Alles hat funktioniert. Status 200 -> Operation/API call erfolgreich
-      })
+  upload(req, res, function (err) {
+
+    if (req.fileValidationError) { // Keine Bilddatei
+      return res.status(500).json(req.fileValidationError)
+    }
+    else if (err instanceof multer.MulterError) {
+        return res.status(500).json(err)
+      // Multer-Fehler aufgetreten beim Upload.
+    }
+    else if (err) {
+      return res.status(500).json(err)
+      // Unbekannter Fehler aufgetreten beim Upload.
+    }
+    
+      return res.status(200).send(req.file)
+      // Alles hat funktioniert. Bilddatei war richtig: Status 200 -> Operation/API call erfolgreich
+    })
 });
 
 // Den Server auf Port 8000 hören lassen
