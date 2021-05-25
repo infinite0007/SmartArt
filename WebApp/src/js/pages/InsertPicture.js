@@ -1,11 +1,13 @@
 require("../../stylesheets/_all.scss");
-import {Container, Row, Col, Button} from "react-bootstrap";
+import {Container, Row, Col, Button, Image} from "react-bootstrap";
 import React, { useState } from "react";
 import axios from 'axios';
 
 function InsertPicture() {
 
-  const [state , setState] = useState({selectedFile: null})
+  const [picturePath , setPicturePath] = useState("") // Pfad zum Bild welches dann immer angezeigt wird. Am Anfang leer da kein Bild angezeigt werden soll, bevor etwas hochgeladen wurde.
+
+  const [state , setState] = useState({selectedFile: null}) // Filestate
 
   const onChangeHandler = (e) => {
     console.log(e.target.files[0]) // Nur zum prüfen welche File für Entwicklung / an Stelle 0 ist das aktuelle File und die Details
@@ -24,6 +26,8 @@ function InsertPicture() {
     })
     .then(res => { // then print response status
         console.log(res.statusText)
+        var newPicturePath = res.data.replace("public", ""); // Ändere das Bild zum Pfad des gerade hochgeladenen -> Das /public vorne muss noch weggecutted werden da wir schon von /public ausgehen und dies dann nicht mehr brauchen, ansonsten wird das Bild nicht gefunden da falscher Ordner
+        setPicturePath(newPicturePath);
     })
     }
 
@@ -37,12 +41,7 @@ function InsertPicture() {
             <Button variant="success" onClick={onClickHandler}>Hochladen</Button>
           </Col>
           <Col xs={6} md={4}>
-            <p>
-              1. Laden Sie sich das aktuelle Android Studio Projekt herunter über: <a href="https://github.com/" target="_blank">Github</a><br /><br />
-              2. Deployen und installieren Sie das Projekt auf ihrem Android Gerät<br /><br />
-              3. Geben Sie Ihren BMI wie in der App beschrieben an<br /><br />
-              4. Nun bekommen Sie eine ID mit der Sie sich einloggen können
-            </p>
+          <Image src={picturePath} width="500" rounded />
           </Col>
         </Row>
       </Container>

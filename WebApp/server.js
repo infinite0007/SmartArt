@@ -40,8 +40,8 @@ app.post('/upload',function(req, res) {
       // Unbekannter Fehler aufgetreten beim Upload.
     }
     
-      return res.status(200).send(req.file)
-      // Alles hat funktioniert. Bilddatei war richtig: Status 200 -> Operation/API call erfolgreich
+    // Alles hat funktioniert. Bilddatei war richtig: Status 200 -> Operation/API call erfolgreich
+    return res.status(200).send(`${req.file.path}`)
     })
 });
 
