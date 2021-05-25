@@ -1,10 +1,10 @@
 require("../../../stylesheets/_all.scss");
 import React from "react";
 // Images
-import Bg from "../../../images/ranking/parallaxassets/bg.jpg";
-import Moon from "../../../images/ranking/parallaxassets/moon.png";
-import Mountain from "../../../images/ranking/parallaxassets/mountain.png";
-import Road from "../../../images/ranking/parallaxassets/road.png";
+import Bg from "../../../images/art/parallaxassets/bg.jpg";
+import Moon from "../../../images/art/parallaxassets/moon.png";
+import Mountain from "../../../images/art/parallaxassets/mountain.png";
+import Road from "../../../images/art/parallaxassets/road.png";
 
 export default class ParallaxComponent extends React.Component {
 
@@ -40,12 +40,12 @@ export default class ParallaxComponent extends React.Component {
   render() {
 
     return (
-      <section className="ranking-section">
-        <img src={Bg} id="bg" className="ranking-img"/>
-        <img src={Moon} id="moon" className="ranking-img"/>
-        <img src={Mountain} id="mountain" className="ranking-img"/>
-        <img src={Road} id="road" className="ranking-img"/>
-        <h1 id="text" className="bigHeader">Ranking</h1>
+      <section className="art-section">
+        <img src={Bg} id="bg" className="art-img"/>
+        <img src={Moon} id="moon" className="art-img"/>
+        <img src={Mountain} id="mountain" className="art-img"/>
+        <img src={Road} id="road" className="art-img"/>
+        <h1 id="text" className="bigHeader">Kunst</h1>
       </section>
     );
   }
