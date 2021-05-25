@@ -68,9 +68,11 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.4"
   },
+  "_comment": "mit npm run start wird der server gestartet sowie die webapp (mit Erweiterung npm-run-all). -p = Run commands in parallel // -r = Kill all commands when one of them finishes with an exit code of zero. Hier Infos: https://stackoverflow.com/questions/30950032/how-can-i-run-multiple-npm-scripts-in-parallel",
   "scripts": {
-    "start": "node scripts/start.js",
     "dev": "node scripts/start.js",
+    "smartart-server": "node server.js",
+    "start": "npm-run-all -p -r dev smartart-server",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "lint": "eslint src/**/*.js  --fix",
@@ -95,6 +97,7 @@
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.22.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1"
   },
   "babel": {
