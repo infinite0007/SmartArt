@@ -4,7 +4,7 @@ import React from "react";
 import Bg from "../../../images/art/parallaxassets/bg.jpg";
 import Moon from "../../../images/art/parallaxassets/moon.png";
 import Mountain from "../../../images/art/parallaxassets/mountain.png";
-import Road from "../../../images/art/parallaxassets/road.png";
+import Town from "../../../images/art/parallaxassets/town.png";
 
 export default class ParallaxComponent extends React.Component {
 
@@ -25,15 +25,15 @@ export default class ParallaxComponent extends React.Component {
     let bg = document.getElementById('bg');
     let moon = document.getElementById("moon");
     let mountain = document.getElementById("mountain");
-    let road = document.getElementById("road");
+    let town = document.getElementById("town");
     let text = document.getElementById("text");
 
     var value = window.scrollY;
   
     bg.style.top = value * 0.5 + 'px';
     moon.style.left = -value * 0.5 + 'px';
-    mountain.style.top = -value * 0.15 + 'px';
-    road.style.top = value * 0.15 + 'px';
+    mountain.style.top = -value * 0.02 + 'px';
+    town.style.top = value * 0.15 + 'px';
     text.style.top = value * 1 + 'px';
   }
 
@@ -44,7 +44,7 @@ export default class ParallaxComponent extends React.Component {
         <img src={Bg} id="bg" className="art-img"/>
         <img src={Moon} id="moon" className="art-img"/>
         <img src={Mountain} id="mountain" className="art-img"/>
-        <img src={Road} id="road" className="art-img"/>
+        <img src={Town} id="town" className="art-img"/>
         <h1 id="text" className="bigHeader">Kunst</h1>
       </section>
     );
