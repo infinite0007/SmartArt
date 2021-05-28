@@ -5,9 +5,16 @@ class MobxInteractionStore {
     // wird die Komponente neu gerendert.
     @observable stylesArray = null;
 
-    // 3. Action wird aufgerufen. Übergebene Werte werden nun in Variablen gesetzt
+    // Speichert welcher Style ausgewählt wurde
+    @observable choosedStyle = null;
+
+    // Action wird aufgerufen. Übergebene Werte werden nun in Variablen gesetzt
     @action setStylesArray(stylesArray) {
         this.stylesArray = stylesArray;
+    }
+
+    @action setChoosedStyle(choosedStyle) {
+        this.choosedStyle = choosedStyle;
     }
 
 }
