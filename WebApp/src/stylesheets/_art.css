@@ -51,3 +51,8 @@
 #town {
   z-index: 2;
 }
+
+.image-list {
+  display: flex;
+  flex-flow: row wrap;
+}

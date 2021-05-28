@@ -5,8 +5,8 @@ import GetStyles from "../components/APICalls/GetStyles";
 // Store einbinden
 import mobxInteractionStore from "../stores/mobxInteractionStore"
 
-function Art(props) {
-  // GetStyles(props); // Hole Styles durch API-GET-Call und speichere sie in Mobx-Styles-Array
+function Art() {
+  // GetStyles(); // Hole Styles durch API-GET-Call und speichere sie in Mobx-Styles-Array
 
   const body = {
     background: '#0a2a43',
@@ -16,7 +16,11 @@ function Art(props) {
   return (
     <div style={body}>
       <ParallaxComponent/>
-      <GetStyles props ="props"/>
+      <div className="image-list" >
+
+        <GetStyles/>
+      </div>
+      
     </div>
   );
 }
