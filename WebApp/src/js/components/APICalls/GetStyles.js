@@ -1,8 +1,8 @@
+require("../../../stylesheets/_all.scss");
 import { ACCESS_TOKEN_NAME, API_BASE_URL } from '../../config/apiConstants';
-import {Row, Col, Image} from "react-bootstrap";
-import axios from 'axios'
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
+import {Col, Card} from "react-bootstrap";
+import axios from 'axios'
 
 // Store einbinden
 import mobxInteractionStore from "../../stores/mobxInteractionStore"
@@ -18,6 +18,7 @@ function GetStyles() {
       .then(function (response) {
           if(response.status == 200){
 
+            console.log("Styles erfolgreich geladen");
             // MOBX-Action wird getriggert.
             mobxInteractionStore.setStylesArray(response.data.styles);
             // console.log(response.data.styles); // Nur zum testen, was in dem Array drin ist
@@ -45,7 +46,15 @@ function GetStyles() {
     return mobxInteractionStore.stylesArray.map((image, index) => {
       // console.log(image)
       return (
-        <Image style={{ width: 350, height: 300 }} src={image.url} key={index} />
+        <Col key={index}>
+          <Card>
+            <Card.Img variant="top" src={image.url} />
+            <Card.Body>
+              <Card.Title>{image.title}</Card.Title>
+              <Card.Text>{image.description}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
         );
     });
     
