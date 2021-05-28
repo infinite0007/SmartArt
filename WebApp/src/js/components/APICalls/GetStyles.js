@@ -7,7 +7,7 @@ import axios from 'axios'
 // Store einbinden
 import mobxInteractionStore from "../../stores/mobxInteractionStore"
 
-
+//  Hole Styles durch API-GET-Call und speichere sie in Mobx-Styles-Array
 function GetStyles() {
 
   const [isBusy, setBusy] = useState(true) // Busy initialisiert mit anfangs true!

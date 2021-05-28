@@ -9,7 +9,6 @@ import StyleImagesModal from "../components/Art/StyleImagesModal";
 import mobxInteractionStore from "../stores/mobxInteractionStore"
 
 function Art() {
-  // GetStyles(); // Hole Styles durch API-GET-Call und speichere sie in Mobx-Styles-Array
 
   const [modalShow, setModalShow] = React.useState(false);
 
