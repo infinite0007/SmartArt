@@ -48,7 +48,7 @@ function GetStyles(props) {
     return (
       <Col key={index}>
         <div onClick={props.onHide}>
-          <Card onClick={() => CardClicked([image.id, image.url])}>
+          <Card onClick={() => {CardClicked([image.id, image.url]); props.setstylepicture(image.url);}}>
             <Card.Img variant="top" src={image.url} />
             <Card.Body>
               <Card.Title>{image.title}</Card.Title>

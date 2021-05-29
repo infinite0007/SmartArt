@@ -1,6 +1,6 @@
 require("../../stylesheets/_all.scss");
 import React, { useState } from "react";
-import {Container, Button} from "react-bootstrap";
+import {Container, Button, Image} from "react-bootstrap";
 import ParallaxComponent from "../components/Parallax/ParallaxComponent";
 import StyleImagesModal from "../components/Art/StyleImagesModal";
 
@@ -10,6 +10,8 @@ import mobxInteractionStore from "../stores/mobxInteractionStore"
 function Art() {
 
   const [modalShow, setModalShow] = React.useState(false);
+
+  const [stylePicture, setStylePicture] = useState("") // Pfad zur Bilddatei die als Style ausgewählt wurde.
 
   const body = {
     background: '#0a2a43',
@@ -29,7 +31,10 @@ function Art() {
         <StyleImagesModal
           show={modalShow}
           onHide={() => setModalShow(false)}
+          setstylepicture={setStylePicture}
         />
+
+        <Image src={stylePicture} width="300" rounded />
       </Container>
 
     </div>
