@@ -1,5 +1,5 @@
 {
-  "name": "juliansapp",
+  "name": "SmartArt",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +16,7 @@
     "camelcase": "^6.1.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "chart.js": "^2.9.4",
+    "cors": "^2.8.5",
     "css-loader": "4.3.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
@@ -35,6 +36,7 @@
     "mini-css-extract-plugin": "0.11.3",
     "mobx": "^6.0.4",
     "mobx-react": "^7.0.5",
+    "multer": "^1.4.2",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
@@ -66,9 +68,11 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.4"
   },
+  "_comment": "mit npm run start wird der server gestartet sowie die webapp (mit Erweiterung npm-run-all). -p = Run commands in parallel // -r = Kill all commands when one of them finishes with an exit code of zero. Hier Infos: https://stackoverflow.com/questions/30950032/how-can-i-run-multiple-npm-scripts-in-parallel",
   "scripts": {
-    "start": "node scripts/start.js",
     "dev": "node scripts/start.js",
+    "smartart-server": "node server.js",
+    "start": "npm-run-all -p -r dev smartart-server",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "lint": "eslint src/**/*.js  --fix",
@@ -93,6 +97,7 @@
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.22.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1"
   },
   "babel": {

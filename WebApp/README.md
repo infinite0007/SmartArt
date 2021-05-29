@@ -11,7 +11,13 @@ In the project directory, you can run:
 Install all dependencies.\
 Important before running the project.
 
-### `npm start` / `npm run dev`
+### `npm start`
+**Easiest Way to get started with SmartArt**
+
+Runs the SmartArt-Server **plus** the WebApp with one command.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `npm run dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

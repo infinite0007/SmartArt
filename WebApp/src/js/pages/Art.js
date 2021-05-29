@@ -2,7 +2,7 @@ require("../../stylesheets/_all.scss");
 import React from "react";
 import ParallaxComponent from "../components/Parallax/ParallaxComponent";
 
-function Ranking() {
+function Art() {
 
   const body = {
     background: '#0a2a43',
@@ -16,4 +16,4 @@ function Ranking() {
   );
 }
 
-export default (Ranking);
+export default (Art);
