@@ -47,8 +47,8 @@ def Diashow(matrix,path):
                 num +=1
                 time.sleep(5)
             else:
-                img = "/home/salah/Pictures/critical_failure.jpeg"    
-                #img = "/home/pi/Downloads/criticalfailure.jpeg"    
+                #img = "/home/salah/Pictures/critical_failure.jpeg"    
+                img = "/home/pi/Downloads/criticalfailure.jpeg"    
                 image = Image.open(img)
                 # Make image fit our screen.
                 setImage(matrix,img)
@@ -60,6 +60,6 @@ def SingleImageView(matrix,path):
             img = newestPic(path)
             setImage(matrix,img)
         else:
-            img = "/home/salah/Pictures/critical_failure.jpeg"    
-            #img = "/home/pi/Downloads/criticalfailure.jpeg"    
+            #img = "/home/salah/Pictures/critical_failure.jpeg"    
+            img = "/home/pi/Downloads/criticalfailure.jpeg"    
             setImage(matrix,img)
