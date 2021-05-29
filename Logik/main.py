@@ -16,10 +16,10 @@ if __name__ == "__main__":
     choice = input("Was willst du tun?")
     
     if choice == "1":
-        matrixController.Diashow(matrix, path)
+        matrixController.startDiashow(matrix, path)
     elif choice == "2":
         #print(matrixController.newestPic(path))
-        matrixController.SingleImageView(matrix, path)
+        matrixController.startSingleImageView(matrix, path)
     
     
     

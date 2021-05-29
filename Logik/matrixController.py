@@ -30,7 +30,7 @@ def setImage(matrix,img):
     matrix.SetImage(image.convert('RGB'))
 
 
-def Diashow(matrix,path):
+def startDiashow(matrix,path):
     num = 0
     img = ""
     #loop to iterate through the picture folder over and over
@@ -55,7 +55,7 @@ def Diashow(matrix,path):
                 num +=1
                 time.sleep(5)
         
-def SingleImageView(matrix,path):
+def startSingleImageView(matrix,path):
     img = ""
     while True:
         if os.listdir(path) !=[]:
