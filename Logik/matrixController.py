@@ -39,6 +39,14 @@ def Diashow(matrix,path):
         files = os.listdir(path)
         amount = len(files)
         num = 0
+        if amount == 0:
+            #img = "/home/salah/Pictures/critical_failure.jpeg"    
+            img = "/home/pi/Downloads/criticalfailure.jpeg"    
+            image = Image.open(img)
+            # Make image fit our screen.
+            setImage(matrix,img)
+            time.sleep(5)
+            break
         while num < amount and amount != 0:
             img = files[num].title().lower()
             if os.listdir(path) !=[]:
@@ -46,12 +54,6 @@ def Diashow(matrix,path):
                 setImage(matrix,img)
                 num +=1
                 time.sleep(5)
-            else:
-                #img = "/home/salah/Pictures/critical_failure.jpeg"    
-                img = "/home/pi/Downloads/criticalfailure.jpeg"    
-                image = Image.open(img)
-                # Make image fit our screen.
-                setImage(matrix,img)
         
 def SingleImageView(matrix,path):
     img = ""
@@ -63,3 +65,5 @@ def SingleImageView(matrix,path):
             #img = "/home/salah/Pictures/critical_failure.jpeg"    
             img = "/home/pi/Downloads/criticalfailure.jpeg"    
             setImage(matrix,img)
+            time.sleep(5)
+            break
