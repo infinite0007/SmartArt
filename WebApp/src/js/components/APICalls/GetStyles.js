@@ -64,7 +64,7 @@ function GetStyles(props) {
 function CardClicked(choosedStyle) { // Speichere gewähltes Style in mobx
    // Schließt das Modal wieder nach Auswahl des Styles
   mobxInteractionStore.setChoosedStyle(choosedStyle);
-  console.log(choosedStyle[0], choosedStyle[1])
+  // console.log(choosedStyle[0], choosedStyle[1]) // Für Testzwecke, um zu sehen ob die Daten die man bekommt richtig sind: [0] ist die spezielle id, [1] ist die Url zur Bilddatei
 }
 
 export default GetStyles;
