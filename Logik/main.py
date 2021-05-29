@@ -2,8 +2,8 @@ import matrixController
 
 if __name__ == "__main__":
         
-    path = "/home/salah/Downloads/"
-    #path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
+    #path = "/home/salah/Downloads/"
+    path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
     matrix = matrixController.setOptions()
 
     print("=========================================")
