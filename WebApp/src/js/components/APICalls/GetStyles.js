@@ -8,7 +8,7 @@ import axios from 'axios'
 import mobxInteractionStore from "../../stores/mobxInteractionStore"
 
 //  Hole Styles durch API-GET-Call und speichere sie in Mobx-Styles-Array
-function GetStyles() {
+function GetStyles(props) {
 
   const [isBusy, setBusy] = useState(true) // Busy initialisiert mit anfangs true!
 
@@ -47,20 +47,24 @@ function GetStyles() {
     // console.log(image)
     return (
       <Col key={index}>
-        <Card onClick={() => CardClicked([image.id, image.url])}>
-          <Card.Img variant="top" src={image.url} />
-          <Card.Body>
-            <Card.Title>{image.title}</Card.Title>
-            <Card.Text>{image.description}</Card.Text>
-          </Card.Body>
-        </Card>
+        <div onClick={props.onHide}>
+          <Card onClick={() => CardClicked([image.id, image.url])}>
+            <Card.Img variant="top" src={image.url} />
+            <Card.Body>
+              <Card.Title>{image.title}</Card.Title>
+              <Card.Text>{image.description}</Card.Text>
+            </Card.Body>
+          </Card>
+        </div>  
       </Col>
     );
   });
 }
 
 function CardClicked(choosedStyle) { // Speichere gewähltes Style in mobx
+   // Schließt das Modal wieder nach Auswahl des Styles
   mobxInteractionStore.setChoosedStyle(choosedStyle);
+  console.log(choosedStyle[0], choosedStyle[1])
 }
 
 export default GetStyles;

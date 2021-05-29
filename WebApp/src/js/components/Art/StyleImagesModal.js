@@ -1,5 +1,6 @@
 import React from "react";
 import {Modal, Row, Button} from "react-bootstrap";
+import GetStyles from "../../components/APICalls/GetStyles";
 
 function StyleImagesModal(props) {
   return (
@@ -13,7 +14,7 @@ function StyleImagesModal(props) {
         <Modal.Title id="contained-modal-title-vcenter">Wähle einen gewünschten Style</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Row xs={1} md={3} className="g-4">{props.getstyles}</Row>
+        <Row xs={1} md={3} className="g-4">{GetStyles(props)}</Row>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Schließen</Button>

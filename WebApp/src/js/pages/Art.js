@@ -2,7 +2,6 @@ require("../../stylesheets/_all.scss");
 import React, { useState } from "react";
 import {Container, Button} from "react-bootstrap";
 import ParallaxComponent from "../components/Parallax/ParallaxComponent";
-import GetStyles from "../components/APICalls/GetStyles";
 import StyleImagesModal from "../components/Art/StyleImagesModal";
 
 // Store einbinden
@@ -30,7 +29,6 @@ function Art() {
         <StyleImagesModal
           show={modalShow}
           onHide={() => setModalShow(false)}
-          getstyles={GetStyles()}
         />
       </Container>
 
