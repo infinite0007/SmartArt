@@ -3,4 +3,4 @@
 export const API_BASE_URL = 'https://api.deeparteffects.com/v1/noauth';
 
 // Ab hier nichts mehr ändern.
-export const ACCESS_TOKEN_NAME = 'token';
+export const ACCESS_KEY = 'PxL2SR0qCF79udOZ9b23Q2EGu83E3esB2jsCp6SL';

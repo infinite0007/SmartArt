@@ -1,5 +1,5 @@
 require("../../../stylesheets/_all.scss");
-import { ACCESS_TOKEN_NAME, API_BASE_URL } from '../../config/apiConstants';
+import { ACCESS_KEY, API_BASE_URL } from '../../config/apiConstants';
 import React, { useState } from "react";
 import {Col, Card} from "react-bootstrap";
 import axios from 'axios'
@@ -14,7 +14,7 @@ function GetStyles(props) {
 
   if (mobxInteractionStore.stylesArray == null) { // Macht API-Call nur wenn Styles-Array noch nicht befüllt wurde
 
-    axios.get(API_BASE_URL+'/styles', { headers: { 'x-api-key': 'PxL2SR0qCF79udOZ9b23Q2EGu83E3esB2jsCp6SL' }})
+    axios.get(API_BASE_URL+'/styles', { headers: { 'x-api-key': ACCESS_KEY }})
     .then(function (response) {
         if(response.status == 200){
 
