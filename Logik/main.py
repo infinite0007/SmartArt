@@ -1,12 +1,25 @@
 import matrixController
 
-#path = "~/Downloads/"
-path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
-
 if __name__ == "__main__":
-    
+        
+    path = "/home/salah/Downloads/"
+    #path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
     matrix = matrixController.setOptions()
-    #matrixController.Diashow(matrix, path)
-    print(matrixController.newestPic(path))
-    matrixController.SingleImageView(matrix, path)
+
+    print("=========================================")
+    print("Willkommen in der Bildergalerie Steuerung")
+    print("      Bitte einen Modus auswaehlen")
+    print("      1 -   Diashow starten")
+    print("      2 -   Neuestes Bild anzeigen")
+    print("=========================================")
+
+    choice = input("Was willst du tun?")
+    
+    if choice == "1":
+        matrixController.Diashow(matrix, path)
+    elif choice == "2":
+        #print(matrixController.newestPic(path))
+        matrixController.SingleImageView(matrix, path)
+    
+    
     
