@@ -98,7 +98,7 @@ function Art() {
           <Image src={resultUrl} width="400" rounded />
         </div>
 
-        <Button variant="warning" onClick={ () => SafeResult('https://bilder.t-online.de/b/84/93/82/46/id_84938246/920/tid_da/eichhoernchen-geert-weggen-zeigt-die-welt-der-kleinen-nager-.jpg')}>
+        <Button variant="info" onClick={ () => SafeResult(resultUrl)}>
         Ergebnis zur Matrix übertragen
         </Button>
 

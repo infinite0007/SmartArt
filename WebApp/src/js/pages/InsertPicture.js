@@ -1,7 +1,7 @@
 require("../../stylesheets/_all.scss");
 import {Container, Row, Col, Button, Image} from "react-bootstrap";
 import React, { useState } from "react";
-import axios from 'axios';
+import PostUploadSinglePicture from "../components/APICalls/PostUploadSinglePicture";
 
 function InsertPicture() {
 
@@ -18,17 +18,10 @@ function InsertPicture() {
     })
   }
 
-  const onClickHandler = () => { // Wenn der Button gedrückt wird zum hochladen
-    const data = new FormData() 
-    data.append('file', state.selectedFile)
-    axios.post("http://" + location.hostname + ":8000/upload", data, { // location.hostname gibt den aktuellen Host wieder, von dem die Seite aufgerufen wird. Somit funktioniert der API-Call auch wenn die WebApp auf einer anderen Maschine im Netz läuft und nicht nur local.
-      // receive two    parameter endpoint url ,form data
-    })
-    .then(res => { // then print response status
-        console.log(res.statusText)
-        var newPicturePath = res.data.replace("public", ""); // Ändere das Bild zum Pfad des gerade hochgeladenen -> Das /public vorne muss noch weggecutted werden da wir schon von /public ausgehen und dies dann nicht mehr brauchen, ansonsten wird das Bild nicht gefunden da falscher Ordner
-        setPicturePath(newPicturePath);
-    })
+  const onClickHandler = () => { // Wenn der Button gedrückt wird zum hochladen wird der API-Call aufgerufen, der das Bild dann abspeichert um es dann für die Matrix benutzbar zu machen
+    const data = new FormData();
+    data.append('file', state.selectedFile);
+    PostUploadSinglePicture(data, setPicturePath);
     }
 
   return (

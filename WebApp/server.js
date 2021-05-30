@@ -29,7 +29,6 @@ app.get('/',function(req,res){ // Falls jemand auf Standard-Adresse einen Call a
 
 // Festlegung der API POST Route (URL-Adresse) für den File-Upload
 app.post('/upload',function(req, res) {
-
     
   upload(req, res, function (err) {
 
@@ -50,9 +49,9 @@ app.post('/upload',function(req, res) {
     })
 });
 
+// Die Result URL von dem durch Deepart erstellten Bild wird hier umgewandelt und durch den Filestream gejagt. Danach wird das Bild im Ordner abgespeichert
 app.get('/saveresult',function(req, res) {
   
-  console.log(req.headers.url);
   var download_image;
   axios({
     url: req.headers.url,
@@ -66,7 +65,10 @@ app.get('/saveresult',function(req, res) {
           .on('finish', () => resolve())
           .on('error', e => reject(e)));
       }),
-  );
+  )
+  .catch(function (error) {
+    console.log(error);
+  });
 });
 
 // Den Server auf Port 8000 hören lassen
