@@ -22,6 +22,8 @@ function Art() {
 
   const [resultUrl, setResultUrl] = useState(""); // Das Ergebnis also die fertige Bild-Url wird hier gespeichert. Wenn sie drin ist wird das Bild auch sofort gerendert und angezeigt
 
+  const [uploadResultButtonDisabled, setUploadResultButtonDisabled] = useState(true); // Disabled = true anfangs oder gibt wieder frei den letzten Button der zur bestätigung dient das Result abzuspeicher. Dies soll erst verfügbar sein, wenn eine resultUrl bereits erhalten wurde.
+
   // Callback für Base64 Upload für Image
   function getFiles(files) {
     setUploadedFile({ files: files }) // Setzen der Files in state: uploadedFile
@@ -46,15 +48,9 @@ function Art() {
     PostCombinePictures(payload).then((response) => {
       submissionId = response;
 
-      GetResult(submissionId, setResultUrl);
+      GetResult(submissionId, setResultUrl, setUploadResultButtonDisabled);
     })
   }
-
-  /*if (resultUrl != "") { // Schaut wenn resultUrl gefüllt ist, denn dann soll das B
-    console.log("URL ergattert");
-    console.log(resultUrl);
-
-  }*/
 
   return (
     <div style={body}>
@@ -62,13 +58,13 @@ function Art() {
 
       <Container>
 
-        <Button variant="warning">
+        <Button variant="secondary">
           Wähle ein Bild welches kombiniert wird<br/>
           <FileBase64
             multiple={true}
             onDone={getFiles.bind(this)}
           />
-        </Button>
+        </Button><div/>
 
         <div className="text-center">
           { uploadedFile.files.map((file, index) => {
@@ -90,7 +86,7 @@ function Art() {
           <Image src={stylePicture} width="400" rounded />
         </div>
 
-        <Button variant="success" onClick={handleSubmitClick}>
+        <Button variant="info" onClick={handleSubmitClick}>
         Kombiniere
         </Button>
 
@@ -98,7 +94,7 @@ function Art() {
           <Image src={resultUrl} width="400" rounded />
         </div>
 
-        <Button variant="info" onClick={ () => SafeResult(resultUrl)}>
+        <Button variant="success" disabled={uploadResultButtonDisabled} onClick={ () => SafeResult(resultUrl)}>
         Ergebnis zur Matrix übertragen
         </Button>
 
