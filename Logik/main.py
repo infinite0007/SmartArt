@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     helper.startUI()    
     
-    choice = helper.intCheck("Was willst du tun?\n")
+    choice = helper.startCheck("Was willst du tun?\n")
     if choice == 1:
         slt = helper.intCheck(input("Waehle noch die Zeit (in Sekunden) zwischen den Bildern aus: \n"))
         #Fehlerabfrage bei viel zu langen Zeiten
@@ -27,7 +27,3 @@ if __name__ == "__main__":
         matrixController.startDiashow(matrix, path,slt)
     elif choice == 2:
         matrixController.startSingleImageView(matrix, path)
-    elif choice != 1 or choice != 2:
-        print("Diese Auswahl existiert nicht (1 Versuch übrig)")
-        helper.startUI()
-        choice = helper.intCheck("Was willst du tun?\n")

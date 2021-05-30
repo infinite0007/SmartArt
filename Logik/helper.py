@@ -1,4 +1,13 @@
 
+
+def startUI():
+    print("=========================================")
+    print("Willkommen in der Bildergalerie Steuerung")
+    print("      Bitte einen Modus auswaehlen")
+    print("      1 -   Diashow starten")
+    print("      2 -   Neuestes Bild anzeigen")
+    print("=========================================")
+
 def intCheck(prompt):
     while True:
         try:
@@ -14,11 +23,12 @@ def strCheck(prompt):
             return _str
         except ValueError as e:
             print("Das war kein String... Bitte nochmal versuchen")
-
-def startUI():
-    print("=========================================")
-    print("Willkommen in der Bildergalerie Steuerung")
-    print("      Bitte einen Modus auswaehlen")
-    print("      1 -   Diashow starten")
-    print("      2 -   Neuestes Bild anzeigen")
-    print("=========================================")
+            
+def startCheck(prompt):
+    while True:
+        try:
+            num = int(input(prompt))
+            return num if num == 1 or num == 2 else startCheck("Diese Auswahl existiert nicht, nochmal bitte:\n ")
+        except ValueError as e:
+            print("Diese Auswahl existiert nicht, nochmal bitte:\n")
+            startUI()
