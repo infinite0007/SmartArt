@@ -31,7 +31,7 @@ def setImage(matrix,img):
     matrix.SetImage(image.convert('RGB'))
 
 
-def startDiashow(matrix,path):
+def startDiashow(matrix,path,sleeptime):
     num = 0
     img = ""
     #loop to iterate through the picture folder over and over
@@ -54,7 +54,7 @@ def startDiashow(matrix,path):
                 img = path + img
                 setImage(matrix,img)
                 num +=1
-                time.sleep(5)
+                time.sleep(sleeptime)
         
 def startSingleImageView(matrix,path):
     img = ""
