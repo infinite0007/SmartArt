@@ -15,13 +15,13 @@ if __name__ == "__main__":
         #Fehlerabfrage bei viel zu langen Zeiten
         while slt > (60*60*24):
             print("Eingabe dauert laenger als 1 Tag!")
-            safety = helper.strCheck("Sicher dass es so lang sein soll? (y/n)\n")
+            safety = helper.strCheck("Sicher dass es so lang sein soll? (Y,y/N,n)\n")
             if safety == "n":
                 slt = helper.intCheck("Waehle eine andere Zeit (in Sekunden): \n")
             elif safety =="y":
                 matrixController.startDiashow(matrix, path,slt)
             else:
-                safety = helper.strCheck("Sicher dass es so lang sein soll? (y/n)\n")
+                safety = helper.strCheck("Sicher dass es so lang sein soll? (Y,y/N,n)\n")
                 
         matrixController.startDiashow(matrix, path,slt)
     elif choice == 2:
