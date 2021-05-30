@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import time
 import os
-import glob
 
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image
