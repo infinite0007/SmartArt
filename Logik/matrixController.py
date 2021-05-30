@@ -8,7 +8,7 @@ from PIL import Image
 def newestPic(path):
     files = os.listdir(path)
     paths = [os.path.join(path, basename) for basename in files]
-    return max(paths, key=os.path.getctime)
+    return min(paths, key=os.path.getctime)
 
 def setOptions():
     # Configuration for the matrix
@@ -47,7 +47,7 @@ def startDiashow(matrix,path):
             time.sleep(5)
             break
         while num < amount and amount != 0:
-            img = files[num].title().lower()
+            img = files[num].title()
             if os.listdir(path) !=[]:
                 img = path + img
                 setImage(matrix,img)
