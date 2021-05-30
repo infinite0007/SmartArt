@@ -34,7 +34,7 @@ function InsertPicture() {
   return (
     <div  className="aboutapp">
       <Container>
-        <h1 className="smallHeader">Lassen Sie ein Bild direkt auf der Matrix anzeigen!</h1>
+        <h1 className="smallHeader">Lassen Sie ein Bild direkt auf Ihrer Matrix anzeigen!</h1>
         <Row>
           <Col xs={6} md={{ span: 4, offset: 2 }}>
             <input type="file" name="file" onChange={onChangeHandler} accept="image/png, image/jpeg"/>

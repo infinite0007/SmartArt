@@ -1,4 +1,4 @@
-/*mit ."name" wird die className angesprochen, OHNE Punkt "name" die Poperty selber z.B. [img] überschreibt --> <img>*/
+/*mit ."name" wird die className angesprochen, OHNE Punkt "name" die Poperty selber z.B. [img] überschreibt --> <img> Mit Hash (#) wird die id angesprochen*/
 .w-80 {
   width: 80%;
 }
