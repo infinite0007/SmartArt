@@ -20,7 +20,7 @@ def strCheck(prompt):
     while True:
         try:
             _str = str(input(prompt))
-            return _str
+            return _str if _str == "y" or _str == "n" else strCheck("Falsche Eingabe. Sicher dass es so lang sein soll? (y/n)").lower()
         except ValueError as e:
             print("Das war kein String... Bitte nochmal versuchen")
             
