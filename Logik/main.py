@@ -11,7 +11,7 @@ if __name__ == "__main__":
     
     choice = helper.startCheck("Was willst du tun?\n")
     if choice == 1:
-        slt = helper.intCheck(input("Waehle noch die Zeit (in Sekunden) zwischen den Bildern aus: \n"))
+        slt = helper.intCheck("Waehle noch die Zeit (in Sekunden) zwischen den Bildern aus: \n")
         #Fehlerabfrage bei viel zu langen Zeiten
         while slt > (60*60*24):
             print("Eingabe dauert laenger als 1 Tag!")
