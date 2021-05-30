@@ -5,6 +5,7 @@ import ParallaxComponent from "../components/Parallax/ParallaxComponent";
 import StyleImagesModal from "../components/Art/StyleImagesModal";
 import FileBase64 from "../utils/react-file-base64" // Dependency als Util da ich diese von Hand bearbeiten musste für meinen Fall, dient dazu um Files in meinem Fall Bilder als Base64 string dazustellen, also zu encoden.
 import PostCombinePictures from "../components/APICalls/PostCombinePictures";
+import GetResult from "../components/APICalls/GetResult";
 
 // Store einbinden
 import mobxInteractionStore from "../stores/mobxInteractionStore"
@@ -18,6 +19,8 @@ function Art() {
 
   const [stylePicture, setStylePicture] = useState("") // Pfad zur Bilddatei die als Style ausgewählt wurde.
 
+  const [resultUrl, setResultUrl] = useState(""); // Das Ergebnis also die fertige Bild-Url wird hier gespeichert. Wenn sie drin ist wird das Bild auch sofort gerendert und angezeigt
+
   // Callback für Base64 Upload für Image
   function getFiles(files) {
     setUploadedFile({ files: files }) // Setzen der Files in state: uploadedFile
@@ -30,7 +33,7 @@ function Art() {
     minHeight: '1500px'
   };
 
-  let handleSubmitClick = (e) => {
+  let handleSubmitClick = (e) => { // Durch Bestätigen des Buttons werden alle Schritte bis zum Ergebnis des Bildes ausgeführt
     e.preventDefault();
     var payload={
       "styleId":mobxInteractionStore.choosedStyle[0],
@@ -40,9 +43,9 @@ function Art() {
     // Hole Submission id, durch Kombination (Submission id ist für den letzten Schritt, mit dieser kann man dann an das Kombinierte, durch AI erstelltes Bild)
     let submissionId = "";
     PostCombinePictures(payload).then((response) => {
-      // MOBX-Action wird getriggert.
-      // mobxInteractionStore.setUserPlanArray(response);
       submissionId = response;
+
+      GetResult(submissionId, setResultUrl);
     })
   }
 
@@ -62,7 +65,7 @@ function Art() {
 
         <div className="text-center">
           { uploadedFile.files.map((file, index) => {
-            return <Image src={file.base64} width="300" key={index} rounded />
+            return <Image src={file.base64} width="400" key={index} rounded />
           }) }
         </div>
 
@@ -77,12 +80,16 @@ function Art() {
         />
 
         <div className="text-center">
-          <Image src={stylePicture} width="300" rounded />
+          <Image src={stylePicture} width="400" rounded />
         </div>
 
         <Button variant="success" onClick={handleSubmitClick}>
         Kombiniere
         </Button>
+
+        <div className="text-center">
+          <Image src={resultUrl} width="400" rounded />
+        </div>
       </Container>
     </div>
   );

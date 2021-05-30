@@ -7,6 +7,8 @@ import axios from 'axios'
 // Store einbinden
 import mobxInteractionStore from "../../stores/mobxInteractionStore"
 
+// API-Call Schritt 1: Hole Styles also ID durch Auswahl des gewünschten Styles
+
 //  Hole Styles durch API-GET-Call und speichere sie in Mobx-Styles-Array
 function GetStyles(props) {
 
@@ -31,7 +33,6 @@ function GetStyles(props) {
     })
     .catch(function (error) {
       console.log(error);
-      // redirectToLogin()
     });
   }
   else if (isBusy) { // Wenn stylesArray schon befüllt stelle Busy auf false somit werden Images gleich gerendert

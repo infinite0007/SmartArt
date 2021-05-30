@@ -1,6 +1,8 @@
 import { ACCESS_KEY, API_BASE_URL } from '../../config/apiConstants';
 import axios from 'axios';
 
+// API-Call Schritt 2: Gib gewünschte Style-Id mit sowie ein Base64 encoded String von einem Bild das dann mit dem Style kombiniert wird (bekommen submissionId zurück)
+
 function PostCombinePictures(payload) {
   
   // Hole Userplan
