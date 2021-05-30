@@ -47,7 +47,7 @@ def startDiashow(matrix,path):
             time.sleep(5)
             break
         while num < amount and amount != 0:
-            img = files[num].title()
+            img = files[num].title().lower()
             if os.listdir(path) !=[]:
                 img = path + img
                 setImage(matrix,img)
