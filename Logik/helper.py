@@ -19,8 +19,8 @@ def intCheck(prompt):
 def strCheck(prompt):
     while True:
         try:
-            _str = str(input(prompt))
-            return _str if _str == "y" or _str == "n" else strCheck("Falsche Eingabe. Sicher dass es so lang sein soll? (y/n)").lower()
+            _str = str(input(prompt)).lower()
+            return _str if _str == "y" or _str == "n" else strCheck("Falsche Eingabe. Sicher dass es so lang sein soll? (y/n)")
         except ValueError as e:
             print("Das war kein String... Bitte nochmal versuchen")
             
