@@ -7,14 +7,6 @@ from PIL import Image
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-def inputCheck(prompt):
-    while True:
-        try:
-            num = int(prompt)
-            return num
-        except ValueError as e:
-            print("Das war keine Zahl... Bitte nochmal versuchen")
-
 def newestPic(path):
     files = os.listdir(path)
     paths = [os.path.join(path, basename) for basename in files]
