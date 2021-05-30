@@ -1,9 +1,11 @@
-#!/usr/bin/env python
 import time
 import os
 
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
+
 from PIL import Image
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 def newestPic(path):
     files = os.listdir(path)
