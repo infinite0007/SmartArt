@@ -10,7 +10,7 @@ function InsertPicture() {
   const [state , setState] = useState({selectedFile: null}) // Filestate
 
   const onChangeHandler = (e) => {
-    console.log(e.target.files[0]) // Nur zum prüfen welche File für Entwicklung / an Stelle 0 ist das aktuelle File und die Details
+    // console.log(e.target.files[0]) // Nur zum prüfen welche File für Entwicklung / an Stelle 0 ist das aktuelle File und die Details
 
     setState({
       selectedFile: e.target.files[0], // File in state laden

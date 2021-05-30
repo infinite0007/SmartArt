@@ -6,6 +6,7 @@ import StyleImagesModal from "../components/Art/StyleImagesModal";
 import FileBase64 from "../utils/react-file-base64" // Dependency als Util da ich diese von Hand bearbeiten musste für meinen Fall, dient dazu um Files in meinem Fall Bilder als Base64 string dazustellen, also zu encoden.
 import PostCombinePictures from "../components/APICalls/PostCombinePictures";
 import GetResult from "../components/APICalls/GetResult";
+import SafeResult from "../components/APICalls/SafeResult";
 
 // Store einbinden
 import mobxInteractionStore from "../stores/mobxInteractionStore"
@@ -49,6 +50,12 @@ function Art() {
     })
   }
 
+  /*if (resultUrl != "") { // Schaut wenn resultUrl gefüllt ist, denn dann soll das B
+    console.log("URL ergattert");
+    console.log(resultUrl);
+
+  }*/
+
   return (
     <div style={body}>
       <ParallaxComponent/>
@@ -90,6 +97,11 @@ function Art() {
         <div className="text-center">
           <Image src={resultUrl} width="400" rounded />
         </div>
+
+        <Button variant="warning" onClick={ () => SafeResult('https://bilder.t-online.de/b/84/93/82/46/id_84938246/920/tid_da/eichhoernchen-geert-weggen-zeigt-die-welt-der-kleinen-nager-.jpg')}>
+        Ergebnis zur Matrix übertragen
+        </Button>
+
       </Container>
     </div>
   );
@@ -97,7 +109,6 @@ function Art() {
 
 function CutBase64String(base64String, setBase64String) { // Beim zurückgelieferten Base64 String ist Anfangs ein Parameter Bsp: data:image/jpeg;base64, dieser muss weg, ansonsten gibt es Fehler da der String dann ungültig wird. String wird dann in state: uploadedFile richtig gespeichert
   var cuttedBase64 = base64String.split(",")[1]; // Teilt den String dort wo ein Komma war [also den Character den man gewählt hat, bei mir Komma]. Teils also was links und rechts davon Bsp: str = "name: description" --> str = str.split(":")[0] --> ["name", " description"] also [0] = links davon // [1] rechts davon
-  // console.log(str);
   setBase64String(cuttedBase64);
 }
 

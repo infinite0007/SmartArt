@@ -3,4 +3,4 @@
 export const API_BASE_URL = 'https://api.deeparteffects.com/v1/noauth';
 
 // Ab hier nichts mehr ändern.
-export const ACCESS_KEY = 'PxL2SR0qCF79udOZ9b23Q2EGu83E3esB2jsCp6SL';
+export const ACCESS_KEY = 'V7aoLs17Iz9iEFJhk1CpC7hKgVKVPGMp3pV6MSoF';
