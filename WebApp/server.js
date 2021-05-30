@@ -11,7 +11,7 @@ var storage = multer.diskStorage({
       cb(null, 'public/matrixPictures')
     },
     filename: function (req, file, cb) {
-      cb(null, Date.now() + '-' +file.originalname )
+      cb(null, Date.now() + '-' +file.originalname.toLowerCase()) // LowerCase da das Python Programm welches die Bilder darstellt nur damit arbeiten kann (Genauer in Doku erklärt)
     }
   })
   
