@@ -16,8 +16,8 @@ if __name__ == "__main__":
     choice = input("Was willst du tun?\n")
     
     if choice == "1":
-        slt = input("Wähle noch die Zeit zwischen den Bildern aus: \n")
-        matrixController.startDiashow(matrix, path, slt)
+        slt = int(input("Wähle noch die Zeit zwischen den Bildern aus: \n"))
+        matrixController.startDiashow(matrix, path,slt)
     elif choice == "2":
         #print(matrixController.newestPic(path))
         matrixController.startSingleImageView(matrix, path)
