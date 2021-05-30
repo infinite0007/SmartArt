@@ -19,7 +19,7 @@
   width: 100%;
   height: 100px;
   background: linear-gradient(to top, #0a2a43, transparent);
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .art-section:after {
@@ -48,6 +48,6 @@
   z-index: 1;
 }
 
-#road {
+#town {
   z-index: 2;
 }
