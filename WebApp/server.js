@@ -3,7 +3,12 @@ var app = express();
 var multer = require('multer') // Filemanipulation
 var cors = require('cors'); // Erlaubt das nutzen/laden auch von anderen Servern, ansonst von Google gesperrt da Sicherheitsmaßnahme bei Browser
 const serverhelper = require('./serverhelper'); // Ausschluss/Filterung von Falschdaten: Die hochgeladene Datei muss ein Bild sein, womöglich wird es sonst ausgenutzt dass jemand andere Dateien wie Malware aufspielen könnte
+// Für Speicherung des Results
+const fs = require('fs');
+const axios = require('axios');
 app.use(cors())
+
+// Info zu Einmaligen Nämen wird Date.now() benutzt. Diese gibt die Anzahl der Millisekunden, die seit dem 01.01.1970 00:00:00 UTC vergangen sind zurück. Somit ist diese einmalig. Auch wäre: Math.random().toString(36).substring(2, 15) möglich dies ist auch einmalig, aber es reicht Date.now() aus.
 
 // Erstellen einer Multer-Instanz und festlegung des Zielordners wo die Dateien gespeichert werden sollen
 var storage = multer.diskStorage({
@@ -11,7 +16,7 @@ var storage = multer.diskStorage({
       cb(null, 'public/matrixPictures')
     },
     filename: function (req, file, cb) {
-      cb(null, Date.now() + '-' +file.originalname )
+      cb(null, Date.now() + '-' +file.originalname.toLowerCase()) // LowerCase da das Python Programm welches die Bilder darstellt nur damit arbeiten kann (Genauer in Doku erklärt)
     }
   })
   
@@ -24,7 +29,6 @@ app.get('/',function(req,res){ // Falls jemand auf Standard-Adresse einen Call a
 
 // Festlegung der API POST Route (URL-Adresse) für den File-Upload
 app.post('/upload',function(req, res) {
-
     
   upload(req, res, function (err) {
 
@@ -43,6 +47,28 @@ app.post('/upload',function(req, res) {
     // Alles hat funktioniert. Bilddatei war richtig: Status 200 -> Operation/API call erfolgreich
     return res.status(200).send(`${req.file.path}`)
     })
+});
+
+// Die Result URL von dem durch Deepart erstellten Bild wird hier umgewandelt und durch den Filestream gejagt. Danach wird das Bild im Ordner abgespeichert
+app.get('/saveresult',function(req, res) {
+  
+  var download_image;
+  axios({
+    url: req.headers.url,
+    responseType: 'stream', // definiere was ich zurück bekomme -> (Binärdaten ohne Information)
+  })
+  .then(
+    response =>
+      new Promise((resolve, reject) => {
+        response.data
+          .pipe(fs.createWriteStream('public/matrixPictures/'+Date.now()+'-result.jpg')
+          .on('finish', () => resolve())
+          .on('error', e => reject(e)));
+      }),
+  )
+  .catch(function (error) {
+    console.log(error);
+  });
 });
 
 // Den Server auf Port 8000 hören lassen
