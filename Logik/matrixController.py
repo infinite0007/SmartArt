@@ -10,7 +10,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 def newestPic(path):
     files = os.listdir(path)
     paths = [os.path.join(path, basename) for basename in files]
-    return min(paths, key=os.path.getctime)
+    return max(paths, key=os.path.getctime)
 
 def setOptions():
     # Configuration for the matrix
