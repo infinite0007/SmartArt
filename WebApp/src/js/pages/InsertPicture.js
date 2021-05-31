@@ -25,7 +25,7 @@ function InsertPicture() {
     }
 
   return (
-    <div  className="aboutapp">
+    <div  className="insertpicture">
       <Container>
         <h1 className="smallHeader">Lassen Sie ein Bild direkt auf Ihrer Matrix anzeigen!</h1>
         <Row>

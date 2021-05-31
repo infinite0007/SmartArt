@@ -10,20 +10,20 @@ export default class HeroSection extends React.Component {
     return (
       <div className="hero-container">
         <video src={SunsetlyVideo} autoPlay loop muted />
-        <h1>AUF ZUM ABENTEUER!</h1>
+        <h1>GENERIERE NEUE KUNST!</h1>
         <p>Auf was wartest du?</p>
         <div className="hero-btns">
-          <Link to="/app" >
+          <Link to="/insertpicture" >
             <button type="button" className="btn--outline--large" onClick={()=> window.scrollTo( 0, 0 )}>LOS GEHTS!</button>
           </Link>
-          <Link to="/ranking" >
-            <button style={{marginLeft: '10px'}} type="button" className="btn--primary--large" onClick={()=> window.scrollTo( 0, 0 )}>VERGLEICHE MICH</button>
+          <Link to="/app" >
+            <button style={{marginLeft: '10px'}} type="button" className="btn--primary--large" onClick={()=> window.scrollTo( 0, 0 )}>WIE FUNKTIONIERTS?</button>
           </Link>
         </div>
         <div className="hero-description">
-        <p>Sunsetly ist eine Anwendung mit der du deine Gesundheit und Fitness mit einem für dich abgestimmten Coach auf eine neue Ebene bringen kannst.<br />
-        Diese Webapp dient hierbei als Erweiterung der App und nicht als Ersatz. Trainingspläne, Statistiken, Rankings<br />
-        und verschiedene Personalisierungen stehen dir hier zur Verfügung.</p>
+        <p>SmartArt ist eine Anwendung mit der du mithilfe eines Raspberry Pi und einer LED-Matrix Bilder einfach projizieren kannst.<br />
+        Diese können mithilfe Deepart zu einer neuen Kunst kreiert und auf dem Raspberry direkt abgespeichert werden.<br />
+        Dir wird eine ganz neue Sichtweise von Kunst näher gebracht, auf die du selber Einfluss nehmen kannst.</p>
         </div>
       </div>
     );

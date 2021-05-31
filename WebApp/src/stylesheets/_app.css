@@ -6,7 +6,8 @@
 }
 
 .pagenotfound,
-.aboutapp {
+.aboutapp,
+.insertpicture {
   display: flex;
   height: 94vh;
   align-items: center;
@@ -33,15 +34,12 @@
 
 .pagenotfound {
   background-image: url("../images/404.jpg");
-  font-size: 100px;
 }
 
 .aboutapp {
   background-image: url("../images/aboutapp/aboutapp.jpg");
-  font-size: 23px;
 }
 
-.ranking {
-  color: #454542;
-  font-size: 23px;
+.insertpicture {
+  background-image: url("../images/insertpicture/insertpicture.jpg");
 }
