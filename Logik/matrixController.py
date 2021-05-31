@@ -62,6 +62,7 @@ def startSingleImageView(matrix,path):
         if os.listdir(path) !=[]:
             img = newestPic(path)
             setImage(matrix,img)
+            time.sleep(3)
         else:
             #img = "/home/salah/Pictures/critical_failure.jpeg"    
             img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
