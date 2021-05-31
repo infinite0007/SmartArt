@@ -1,9 +1,11 @@
-#!/usr/bin/env python
 import time
 import os
 
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
+
 from PIL import Image
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 def newestPic(path):
     files = os.listdir(path)
@@ -29,7 +31,7 @@ def setImage(matrix,img):
     matrix.SetImage(image.convert('RGB'))
 
 
-def startDiashow(matrix,path):
+def startDiashow(matrix,path,sleeptime):
     num = 0
     img = ""
     #loop to iterate through the picture folder over and over
@@ -52,7 +54,7 @@ def startDiashow(matrix,path):
                 img = path + img
                 setImage(matrix,img)
                 num +=1
-                time.sleep(5)
+                time.sleep(sleeptime)
         
 def startSingleImageView(matrix,path):
     img = ""
@@ -60,6 +62,7 @@ def startSingleImageView(matrix,path):
         if os.listdir(path) !=[]:
             img = newestPic(path)
             setImage(matrix,img)
+            time.sleep(3)
         else:
             #img = "/home/salah/Pictures/critical_failure.jpeg"    
             img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
