@@ -6,6 +6,7 @@ import StyleImagesModal from "../components/Art/StyleImagesModal";
 import FileBase64 from "../utils/react-file-base64" // Dependency als Util da ich diese von Hand bearbeiten musste für meinen Fall, dient dazu um Files in meinem Fall Bilder als Base64 string dazustellen, also zu encoden.
 import PostCombinePictures from "../components/APICalls/PostCombinePictures";
 import GetResult from "../components/APICalls/GetResult";
+import SafeResult from "../components/APICalls/SafeResult";
 
 // Store einbinden
 import mobxInteractionStore from "../stores/mobxInteractionStore"
@@ -20,6 +21,8 @@ function Art() {
   const [stylePicture, setStylePicture] = useState("") // Pfad zur Bilddatei die als Style ausgewählt wurde.
 
   const [resultUrl, setResultUrl] = useState(""); // Das Ergebnis also die fertige Bild-Url wird hier gespeichert. Wenn sie drin ist wird das Bild auch sofort gerendert und angezeigt
+
+  const [uploadResultButtonDisabled, setUploadResultButtonDisabled] = useState(true); // Disabled = true anfangs oder gibt wieder frei den letzten Button der zur bestätigung dient das Result abzuspeicher. Dies soll erst verfügbar sein, wenn eine resultUrl bereits erhalten wurde.
 
   // Callback für Base64 Upload für Image
   function getFiles(files) {
@@ -45,7 +48,7 @@ function Art() {
     PostCombinePictures(payload).then((response) => {
       submissionId = response;
 
-      GetResult(submissionId, setResultUrl);
+      GetResult(submissionId, setResultUrl, setUploadResultButtonDisabled);
     })
   }
 
@@ -55,13 +58,13 @@ function Art() {
 
       <Container>
 
-        <Button variant="warning">
+        <Button variant="secondary">
           Wähle ein Bild welches kombiniert wird<br/>
           <FileBase64
             multiple={true}
             onDone={getFiles.bind(this)}
           />
-        </Button>
+        </Button><div/>
 
         <div className="text-center">
           { uploadedFile.files.map((file, index) => {
@@ -83,13 +86,18 @@ function Art() {
           <Image src={stylePicture} width="400" rounded />
         </div>
 
-        <Button variant="success" onClick={handleSubmitClick}>
+        <Button variant="info" onClick={handleSubmitClick}>
         Kombiniere
         </Button>
 
         <div className="text-center">
           <Image src={resultUrl} width="400" rounded />
         </div>
+
+        <Button variant="success" disabled={uploadResultButtonDisabled} onClick={ () => SafeResult(resultUrl)}>
+        Ergebnis zur Matrix übertragen
+        </Button>
+
       </Container>
     </div>
   );
@@ -97,7 +105,6 @@ function Art() {
 
 function CutBase64String(base64String, setBase64String) { // Beim zurückgelieferten Base64 String ist Anfangs ein Parameter Bsp: data:image/jpeg;base64, dieser muss weg, ansonsten gibt es Fehler da der String dann ungültig wird. String wird dann in state: uploadedFile richtig gespeichert
   var cuttedBase64 = base64String.split(",")[1]; // Teilt den String dort wo ein Komma war [also den Character den man gewählt hat, bei mir Komma]. Teils also was links und rechts davon Bsp: str = "name: description" --> str = str.split(":")[0] --> ["name", " description"] also [0] = links davon // [1] rechts davon
-  // console.log(str);
   setBase64String(cuttedBase64);
 }
 
