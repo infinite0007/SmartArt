@@ -21,7 +21,7 @@ function NavigationBar(props) {
             style={logoImageNav}
             className="d-inline-block align-top"
           />
-          Sunsetly
+          SmartArt
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

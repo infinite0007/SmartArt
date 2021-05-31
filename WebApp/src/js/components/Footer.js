@@ -24,13 +24,13 @@ export default class Footer extends React.Component {
                   style={logoImage}
                   className="d-inline-block align-top"
                 />
-                Sunsetly
+                SmartArt
               </div>
             </Nav.Link>
             <Nav.Link href="#app" className="logoBottom" onClick={()=> window.scrollTo( 0, 0 )}>
-              Du hast noch keine Sunsetly ID? Dann hol sie dir!
+              Du wolltest schon immer deine eigene Kunst kreieren & anzeigen? Dann los!
             </Nav.Link>
-          <small className="website-rights">Sunsetly © {(new Date().getFullYear())} - Julian Lingnau</small>
+          <small className="website-rights">SmartArt {(new Date().getFullYear())} - Systemadministration<br/>Sebastian Jäger & Julian Lingnau</small>
         </div>
       </section>
     </div>

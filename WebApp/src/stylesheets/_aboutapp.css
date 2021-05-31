@@ -1,12 +1,4 @@
 /*mit ."name" wird die className angesprochen, OHNE Punkt "name" die Poperty selber z.B. [img] überschreibt --> <img> Mit Hash (#) wird die id angesprochen*/
-.w-80 {
-  width: 80%;
-}
-
-.carousel-indicators {
-  width: 180px;
-}
-
 @media screen and (max-width: 960px) {
   .smallHeader {
     font-size: 45px;
