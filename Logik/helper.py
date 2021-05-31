@@ -32,3 +32,6 @@ def startCheck(prompt):
         except ValueError as e:
             print("Diese Auswahl existiert nicht, nochmal bitte:\n")
             startUI()
+
+def deleteAllPics():
+    pass
