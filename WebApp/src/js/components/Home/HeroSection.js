@@ -2,14 +2,14 @@ require("../../../stylesheets/_all.scss");
 import React from "react";
 import { Link } from "react-router-dom";
 // Video
-import SunsetlyVideo from "../../../images/sunsetly/video-1.mp4";
+import SmartartVideo from "../../../images/smartart/video-1.mp4";
 
 export default class HeroSection extends React.Component {
 
   render() {
     return (
       <div className="hero-container">
-        <video src={SunsetlyVideo} autoPlay loop muted />
+        <video src={SmartartVideo} autoPlay loop muted />
         <h1>GENERIERE NEUE KUNST!</h1>
         <p>Auf was wartest du?</p>
         <div className="hero-btns">

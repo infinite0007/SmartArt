@@ -2,7 +2,7 @@ require("../../stylesheets/_all.scss");
 import React from "react";
 import {Navbar, Nav} from "react-bootstrap";
 // Images
-import SunsetlyLogo from "../../images/sunsetly/sunsetly_logo.png";
+import SmartartLogo from "../../images/smartart/smartart_logo.png";
 
 // Ändert immer nur die URL zu /[abkürzung]
 function NavigationBar(props) {
@@ -16,8 +16,8 @@ function NavigationBar(props) {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="#home">
           <img
-            alt="SunsetlyLogo"
-            src={SunsetlyLogo}
+            alt="SmartartLogo"
+            src={SmartartLogo}
             style={logoImageNav}
             className="d-inline-block align-top"
           />
