@@ -4,7 +4,7 @@ var multer = require('multer') // Filemanipulation
 var cors = require('cors'); // Erlaubt das nutzen/laden auch von anderen Servern, ansonst von Google gesperrt da Sicherheitsmaßnahme bei Browser
 const serverhelper = require('./serverhelper'); // Ausschluss/Filterung von Falschdaten: Die hochgeladene Datei muss ein Bild sein, womöglich wird es sonst ausgenutzt dass jemand andere Dateien wie Malware aufspielen könnte
 // Für Speicherung des Results
-const fs = require('fs');
+const fs = require('fs');  // File system
 const axios = require('axios');
 app.use(cors())
 
