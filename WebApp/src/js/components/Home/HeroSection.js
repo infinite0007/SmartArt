@@ -2,7 +2,7 @@ require("../../../stylesheets/_all.scss");
 import React from "react";
 import { Link } from "react-router-dom";
 // Video
-import SmartartVideo from "../../../images/smartart/video-1.mp4";
+import SmartartVideo from "../../../images/smartart/smartart.mp4";
 
 export default class HeroSection extends React.Component {
 
