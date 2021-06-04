@@ -26,10 +26,10 @@ function NavigationBar(props) {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#app">App</Nav.Link>
-          <Nav.Link href="#insertpicture">Insert Picture</Nav.Link>
-          <Nav.Link href="#art">Art</Nav.Link>
+          <Nav.Link href="#home">Startseite</Nav.Link>
+          <Nav.Link href="#app">Wie funktionierts</Nav.Link>
+          <Nav.Link href="#insertpicture">Bild übertragen</Nav.Link>
+          <Nav.Link href="#art">Kunst</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
