@@ -2,14 +2,14 @@ require("../../stylesheets/_all.scss");
 import React from "react";
 import {Nav} from "react-bootstrap";
 // Images
-import SunsetlyLogo from "../../images/sunsetly/sunsetly_logo.png";
+import SmartartLogo from "../../images/smartart/smartart_logo.png";
 
 export default class Footer extends React.Component {
 
   render() {
     const logoImage = {
-      width: 30,
-      marginRight: '0.4vh'
+      width: 60,
+      marginRight: '0.7vh'
     };
 
     return (
@@ -19,18 +19,17 @@ export default class Footer extends React.Component {
             <Nav.Link href="#home" onClick={()=> window.scrollTo( 0, 0 )}>
               <div className="logoBottom">
                 <img
-                  alt="SunsetlyLogo"
-                  src={SunsetlyLogo}
+                  alt="SmartartLogo"
+                  src={SmartartLogo}
                   style={logoImage}
-                  className="d-inline-block align-top"
                 />
-                Sunsetly
+                SmartArt
               </div>
             </Nav.Link>
             <Nav.Link href="#app" className="logoBottom" onClick={()=> window.scrollTo( 0, 0 )}>
-              Du hast noch keine Sunsetly ID? Dann hol sie dir!
+              Du wolltest schon immer deine eigene Kunst kreieren & anzeigen? Dann los!
             </Nav.Link>
-          <small className="website-rights">Sunsetly © {(new Date().getFullYear())} - Julian Lingnau</small>
+          <small className="website-rights">SmartArt {(new Date().getFullYear())} - Systemadministration<br/>Sebastian Jäger & Julian Lingnau</small>
         </div>
       </section>
     </div>

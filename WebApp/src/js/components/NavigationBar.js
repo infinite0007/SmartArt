@@ -2,7 +2,7 @@ require("../../stylesheets/_all.scss");
 import React from "react";
 import {Navbar, Nav} from "react-bootstrap";
 // Images
-import SunsetlyLogo from "../../images/sunsetly/sunsetly_logo.png";
+import SmartartLogo from "../../images/smartart/smartart_logo.png";
 
 // Ändert immer nur die URL zu /[abkürzung]
 function NavigationBar(props) {
@@ -16,20 +16,20 @@ function NavigationBar(props) {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="#home">
           <img
-            alt="SunsetlyLogo"
-            src={SunsetlyLogo}
+            alt="SmartartLogo"
+            src={SmartartLogo}
             style={logoImageNav}
             className="d-inline-block align-top"
           />
-          Sunsetly
+          SmartArt
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#app">App</Nav.Link>
-          <Nav.Link href="#insertpicture">Insert Picture</Nav.Link>
-          <Nav.Link href="#art">Art</Nav.Link>
+          <Nav.Link href="#home">Startseite</Nav.Link>
+          <Nav.Link href="#app">Wie funktionierts</Nav.Link>
+          <Nav.Link href="#insertpicture">Bild übertragen</Nav.Link>
+          <Nav.Link href="#art">Kunst</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
