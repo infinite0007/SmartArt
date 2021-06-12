@@ -38,7 +38,12 @@ def startCheck(prompt):
             startUI()
 
 def cleanup():
-    file_path = "/home/pi/SmartArt/WebApp/public/ErrPics/"
+    file_path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
     fileList = os.listdir(file_path)
     for fileName in fileList:
-        print(fileName) 
+        if fileName == "goa.jpg":
+            continue
+        elif fileName == "monalisa.jpg":
+            continue
+        else:
+            os.remove(fileName)
