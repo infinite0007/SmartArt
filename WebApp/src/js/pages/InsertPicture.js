@@ -18,8 +18,7 @@ function InsertPicture() {
     })
   }
 
-  const onClickHandler = (e) => { // Wenn der Button gedrückt wird zum hochladen wird der API-Call aufgerufen, der das Bild dann abspeichert um es dann für die Matrix benutzbar zu machen
-    e.preventDefault();
+  const onClickHandler = () => { // Wenn der Button gedrückt wird zum hochladen wird der API-Call aufgerufen, der das Bild dann abspeichert um es dann für die Matrix benutzbar zu machen
     const data = new FormData();
     data.append('file', state.selectedFile);
     PostUploadSinglePicture(data, setPicturePath);
@@ -32,7 +31,7 @@ function InsertPicture() {
         <Row>
           <Col xs={6} md={{ span: 4, offset: 2 }}>
             <input type="file" name="file" onChange={onChangeHandler} accept="image/png, image/jpeg"/>
-            <Button variant="success" onClick={(e) => {onClickHandler(e)}}>Hochladen</Button>
+            <Button variant="success" onClick={onClickHandler}>Hochladen</Button>
           </Col>
           <Col xs={6} md={4}>
           <Image src={picturePath} width="500" rounded />
