@@ -1,7 +1,8 @@
 import matrixController
 import helper
-if __name__ == "__main__":
-    #Festlegen des Pfades für die anzuzeigenden Bilder
+
+def main():
+  #Festlegen des Pfades für die anzuzeigenden Bilder
     #path = "/home/salah/Downloads/"
     path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
     #setzen der Optionen für die 64x64 Matrix 
@@ -26,3 +27,7 @@ if __name__ == "__main__":
         matrixController.startDiashow(matrix, path,slt)
     elif choice == 2:
         matrixController.startSingleImageView(matrix, path)
+
+
+if __name__ == "__main__":
+    main()

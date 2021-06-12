@@ -1,10 +1,14 @@
 import time
 import os
-
+import sys
+#Matrix imports
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
+#Image processing imports
 from PIL import Image
 from PIL import ImageFile
+
+#Secures that even truncated pictures can be loaded
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 def newestPic(path):
@@ -19,7 +23,7 @@ def setOptions():
     options.cols = 64
     options.chain_length = 1
     options.parallel = 1
-    options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
+    options.hardware_mapping = 'adafruit-hat'  # If you don't have an Adafruit HAT: 'regular'
 
     matrix = RGBMatrix(options = options)
     return matrix
@@ -34,13 +38,13 @@ def setImage(matrix,img):
 def startDiashow(matrix,path,sleeptime):
     num = 0
     img = ""
-    #loop to iterate through the picture folder over and over
+    #loop to iterate through the picture folder over and over //TODO: implement the event listener
     while True:
         #simple polling
         files = os.listdir(path)
         amount = len(files)
         num = 0
-        if amount == 0:
+        if amount == 0 or FileNotFoundError:
             #img = "/home/salah/Pictures/critical_failure.jpeg"    
             img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
             image = Image.open(img)
@@ -59,7 +63,7 @@ def startDiashow(matrix,path,sleeptime):
 def startSingleImageView(matrix,path):
     img = ""
     while True:
-        if os.listdir(path) !=[]:
+        if os.listdir(path) !=FileNotFoundError:
             img = newestPic(path)
             setImage(matrix,img)
             time.sleep(3)
