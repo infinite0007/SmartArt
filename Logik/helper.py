@@ -41,13 +41,14 @@ def cleanup():
     file_path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
     fileList = os.listdir(file_path)
     for fileName in fileList:
-        if fileName == "goa.jpg":
+        if fileName == 'goa.jpg':
             continue
-        elif fileName == "monalisa.jpg":
+        elif fileName == 'monalisa.jpg':
             continue
         else:
             try:
-                os.remove(file_path + fileName)
-            except FileNotFoundError or PermissionError:
+                print(fileName)
+                #os.remove(file_path + fileName)
+            except FileNotFoundError:
                 print(fileName)
                 continue
