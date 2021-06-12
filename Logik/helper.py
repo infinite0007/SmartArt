@@ -48,6 +48,6 @@ def cleanup():
         else:
             try:
                 os.remove(file_path + fileName)
-            except FileNotFoundError:
+            except FileNotFoundError or PermissionError:
                 print(fileName)
                 continue
