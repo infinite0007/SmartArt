@@ -1,4 +1,7 @@
 
+import time
+import os
+import glob
 
 def startUI():
     print("=========================================")
@@ -6,6 +9,7 @@ def startUI():
     print("      Bitte einen Modus auswaehlen")
     print("      1 -   Diashow starten")
     print("      2 -   Neuestes Bild anzeigen")
+    print("      3 -   Alle Bilder entfernen (außer Beispielbilder)")
     print("=========================================")
 
 def intCheck(prompt):
@@ -28,10 +32,24 @@ def startCheck(prompt):
     while True:
         try:
             num = int(input(prompt))
-            return num if num == 1 or num == 2 else startCheck("Diese Auswahl existiert nicht, nochmal bitte:\n ")
+            return num if num == 1 or num == 2 or num == 3 else startCheck("Diese Auswahl existiert nicht, nochmal bitte:\n ")
         except ValueError as e:
             print("Diese Auswahl existiert nicht, nochmal bitte:\n")
             startUI()
 
-def deleteAllPics():
-    pass
+def cleanup():
+    file_path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
+    fileList = os.listdir(file_path)
+    for fileName in fileList:
+        if fileName == 'goa.jpg':
+            continue
+        elif fileName == 'monalisa.jpg':
+            continue
+        else:
+            try:
+                print(fileName + " was successfully removed")
+                os.remove(file_path + fileName)
+                
+            except FileNotFoundError:
+                print(fileName)
+                continue
