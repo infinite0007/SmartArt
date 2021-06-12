@@ -59,7 +59,7 @@ def startDiashow(matrix,path,sleeptime):
                 setImage(matrix,img)
                 num +=1
                 time.sleep(sleeptime)
-        
+                #TODO: !!!HIER NOCH DIE MATRIX LEDS RESETTEN!!!!
 def startSingleImageView(matrix,path):
     img = ""
     while True:
