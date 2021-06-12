@@ -37,7 +37,7 @@ def startCheck(prompt):
             print("Diese Auswahl existiert nicht, nochmal bitte:\n")
             startUI()
 
-def deleteAllPics():
+def cleanup():
     file_path = "/home/pi/SmartArt/WebApp/public/ErrPics/"
     while not os.path.exists(file_path):
         time.sleep(10)
