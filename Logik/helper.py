@@ -39,17 +39,6 @@ def startCheck(prompt):
 
 def cleanup():
     file_path = "/home/pi/SmartArt/WebApp/public/ErrPics/"
-    while not os.path.exists(file_path):
-        time.sleep(10)
-
-        if os.path.isfile(file_path):
-        
-            for CleanUp in glob.glob("/home/pi/SmartArt/WebApp/public/ErrPics/"):
-                print(CleanUp)
-                if CleanUp.endswith('goa.jpg'):    
-                    continue
-                elif CleanUp.endswith('monalisa.jpg'):
-                    continue
-                else:
-                    os.remove(CleanUp)
-                    
+    fileList = os.listdir(file_path)
+    for fileName in fileList:
+        print(fileName) 
