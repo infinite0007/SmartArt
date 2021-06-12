@@ -46,4 +46,8 @@ def cleanup():
         elif fileName == "monalisa.jpg":
             continue
         else:
-            os.remove(fileName)
+            try:
+                os.remove(fileName)
+            except FileNotFoundError:
+                print(fileName)
+                continue
