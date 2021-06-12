@@ -43,8 +43,13 @@ def cleanup():
         time.sleep(10)
 
         if os.path.isfile(file_path):
-        #Verifies CSV file was created, then deletes unneeded files.
+        
             for CleanUp in glob.glob("/home/pi/SmartArt/WebApp/public/ErrPics/*.*"):
                 print(CleanUp)
-                if not CleanUp.endswith('goa.jpg') or not CleanUp.endswith('monalisa.jpg'):    
+                if CleanUp.endswith('goa.jpg'):    
+                    continue
+                elif CleanUp.endswith('monalisa.jpg'):
+                    continue
+                else:
                     os.remove(CleanUp)
+                    
