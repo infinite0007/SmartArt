@@ -44,7 +44,7 @@ def cleanup():
 
         if os.path.isfile(file_path):
         
-            for CleanUp in glob.glob("/home/pi/SmartArt/WebApp/public/ErrPics/*.*"):
+            for CleanUp in glob.glob("/home/pi/SmartArt/WebApp/public/ErrPics/"):
                 print(CleanUp)
                 if CleanUp.endswith('goa.jpg'):    
                     continue
