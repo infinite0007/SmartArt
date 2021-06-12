@@ -48,7 +48,7 @@ def cleanup():
         else:
             try:
                 print(fileName)
-                #os.remove(file_path + fileName)
+                os.remove(file_path + fileName)
             except FileNotFoundError:
                 print(fileName)
                 continue
