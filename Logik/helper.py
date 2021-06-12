@@ -32,7 +32,7 @@ def startCheck(prompt):
     while True:
         try:
             num = int(input(prompt))
-            return num if num == 1 or num == 2 else startCheck("Diese Auswahl existiert nicht, nochmal bitte:\n ")
+            return num if num == 1 or num == 2 or num == 3 else startCheck("Diese Auswahl existiert nicht, nochmal bitte:\n ")
         except ValueError as e:
             print("Diese Auswahl existiert nicht, nochmal bitte:\n")
             startUI()
