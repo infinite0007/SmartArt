@@ -1,4 +1,7 @@
 
+import time
+import os
+import glob
 
 def startUI():
     print("=========================================")
@@ -6,6 +9,7 @@ def startUI():
     print("      Bitte einen Modus auswaehlen")
     print("      1 -   Diashow starten")
     print("      2 -   Neuestes Bild anzeigen")
+    print("      3 -   Alle Bilder entfernen (außer Beispielbilder)")
     print("=========================================")
 
 def intCheck(prompt):
@@ -34,4 +38,13 @@ def startCheck(prompt):
             startUI()
 
 def deleteAllPics():
-    pass
+    file_path = "/home/pi/SmartArt/WebApp/public/ErrPics/"
+    while not os.path.exists(file_path):
+        time.sleep(10)
+
+        if os.path.isfile(file_path):
+        #Verifies CSV file was created, then deletes unneeded files.
+            for CleanUp in glob.glob("/home/pi/SmartArt/WebApp/public/ErrPics/*.*"):
+                print(CleanUp)
+                if not CleanUp.endswith('goa.jpg') or not CleanUp.endswith('monalisa.jpg'):    
+                    os.remove(CleanUp)

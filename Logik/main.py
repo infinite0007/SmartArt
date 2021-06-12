@@ -27,7 +27,8 @@ def main():
         matrixController.startDiashow(matrix, path,slt)
     elif choice == 2:
         matrixController.startSingleImageView(matrix, path)
-
+    elif choice == 3:
+        helper.cleanup()
 
 if __name__ == "__main__":
     main()
