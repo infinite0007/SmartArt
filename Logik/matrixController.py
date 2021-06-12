@@ -44,7 +44,7 @@ def startDiashow(matrix,path,sleeptime):
         files = os.listdir(path)
         amount = len(files)
         num = 0
-        if amount == 0 or FileNotFoundError:
+        if amount == 0:
             #img = "/home/salah/Pictures/critical_failure.jpeg"    
             img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
             image = Image.open(img)
@@ -66,7 +66,7 @@ def startSingleImageView(matrix,path):
         if os.listdir(path) !=FileNotFoundError:
             img = newestPic(path)
             setImage(matrix,img)
-            time.sleep(3)
+            time.sleep(3)           #3 secs of waiting time to wait for new pictures
         else:
             #img = "/home/salah/Pictures/critical_failure.jpeg"    
             img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
