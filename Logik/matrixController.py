@@ -69,6 +69,7 @@ def startDiashow(matrix,path,sleeptime):
                     clearScreen(matrix, clearImg)         
         except KeyboardInterrupt:
             print('Kehre zum Hauptmenu zurueck...')
+            clearScreen(matrix, clearImg)         
             time.sleep(3)
             return main.main()  # finishing the loop
                 
