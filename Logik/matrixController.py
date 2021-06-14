@@ -60,10 +60,10 @@ def startDiashow(matrix,path,sleeptime):
                     setImage(matrix,img)
                     num +=1
                     time.sleep(sleeptime)
-                    setImage(matrix)
+                    RGBMatrix.Clear()
+                    
         except:
-            
-            retVal = input("q")
+            retVal = input("q um zum Hauptmenu zurueckzukehren\n")
             if retVal == "q":
                 print('Kehre zum Hauptmenu zurueck...')
                 time.sleep(3)
