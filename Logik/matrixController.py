@@ -1,6 +1,7 @@
 import time
 import os
-import sys
+import main
+import keyboard
 #Matrix imports
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, FrameCanvas
 
@@ -40,26 +41,32 @@ def startDiashow(matrix,path,sleeptime):
     img = ""
     #loop to iterate through the picture folder over and over //TODO: implement the event listener
     while True:
-        #simple polling
-        files = os.listdir(path)
-        amount = len(files)
-        num = 0
-        if amount == 0:
-            #img = "/home/salah/Pictures/critical_failure.jpeg"    
-            img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
-            image = Image.open(img)
-            # Make image fit our screen.
-            setImage(matrix,img)
-            time.sleep(5)
-            break
-        while num < amount and amount != 0:
-            img = files[num].title().lower()
-            if os.listdir(path) !=[]:
-                img = path + img
+        try:
+
+            #simple polling
+            files = os.listdir(path)
+            amount = len(files)
+            num = 0
+            if amount == 0:
+                #img = "/home/salah/Pictures/critical_failure.jpeg"    
+                img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
+                image = Image.open(img)
+                # Make image fit our screen.
                 setImage(matrix,img)
-                num +=1
-                time.sleep(sleeptime)
-                FrameCanvas.Clear();
+                time.sleep(5)
+                break
+            while num < amount and amount != 0:
+                img = files[num].title().lower()
+                if os.listdir(path) !=[]:
+                    img = path + img
+                    setImage(matrix,img)
+                    num +=1
+                    time.sleep(sleeptime)
+                    FrameCanvas.Clear();
+        except:
+            keyboard.is_pressed('q')  # if key 'q' is pressed
+            print('You Pressed A Key!')
+            return main()  # finishing the loop
                 
 def startSingleImageView(matrix,path):
     img = ""

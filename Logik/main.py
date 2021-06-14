@@ -1,10 +1,9 @@
 import matrixController
 import helper
-
 def main():
   #Festlegen des Pfades für die anzuzeigenden Bilder
-    #path = "/home/salah/Downloads/"
-    path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
+    path = "/home/salah/SmartArt/WebApp/public/matrixPictures/"
+    #path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
     #setzen der Optionen für die 64x64 Matrix 
     matrix = matrixController.setOptions()
 
@@ -26,9 +25,13 @@ def main():
                 
         matrixController.startDiashow(matrix, path,slt)
     elif choice == 2:
-        matrixController.startSingleImageView(matrix, path)
+        try:
+            matrixController.startSingleImageView(matrix, path)
+        except KeyboardInterrupt:
+            return main()
     elif choice == 3:
-        helper.cleanup()
-
+        helper.cleanup(path)
+        return main()
+    
 if __name__ == "__main__":
     main()

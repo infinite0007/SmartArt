@@ -1,8 +1,5 @@
 
-import time
 import os
-import glob
-
 def startUI():
     print("=========================================")
     print("Willkommen in der Bildergalerie Steuerung")
@@ -37,9 +34,9 @@ def startCheck(prompt):
             print("Diese Auswahl existiert nicht, nochmal bitte:\n")
             startUI()
 
-def cleanup():
-    file_path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
-    fileList = os.listdir(file_path)
+def cleanup(path):
+    #file_path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
+    fileList = os.listdir(path)
     for fileName in fileList:
         if fileName == 'goa.jpg':
             continue
@@ -48,8 +45,9 @@ def cleanup():
         else:
             try:
                 print(fileName + " was successfully removed")
-                os.remove(file_path + fileName)
+                os.remove(path + fileName)
                 
             except FileNotFoundError:
                 print(fileName)
                 continue
+            
