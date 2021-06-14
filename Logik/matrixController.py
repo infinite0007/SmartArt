@@ -1,6 +1,7 @@
 import time
 import os
-import main
+import helper
+
 #Matrix imports
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, FrameCanvas
 
@@ -71,7 +72,7 @@ def startDiashow(matrix,path,sleeptime):
             print('Kehre zum Hauptmenu zurueck...')
             clearScreen(matrix, clearImg)         
             time.sleep(2)
-            return main.main()  # finishing the loop
+            return helper.main()  # finishing the loop
                 
 def startSingleImageView(matrix,path):
     img = ""
@@ -92,4 +93,4 @@ def startSingleImageView(matrix,path):
             print('Kehre zum Hauptmenu zurueck...')
             clearScreen(matrix, clearImg)         
             time.sleep(2)
-            return main.main()  # finishing the loop
+            return helper.main()  # finishing the loop
