@@ -72,7 +72,8 @@ def startDiashow(matrix,path,sleeptime):
             print('Kehre zum Hauptmenu zurueck...')
             clearScreen(matrix, clearImg)         
             time.sleep(2)
-            return helper.main()  # finishing the loop
+            break  # finishing the loop
+            
                 
 def startSingleImageView(matrix,path):
     img = ""
