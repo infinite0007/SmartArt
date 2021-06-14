@@ -75,16 +75,13 @@ def main():
                 matrixController.startDiashow(matrix, path,slt)
             else:
                 safety = strCheck("Sicher dass es so lang sein soll? (Y,y/N,n)\n")
-
-            retVal = matrixController.startDiashow(matrix, path,slt)
-            if(retVal == 2):
-                main()
+                
+        matrixController.startDiashow(matrix, path,slt)
     elif choice == 2:
-        retVal = matrixController.startSingleImageView(matrix, path)
-        if(retVal == 2):
-            main()
+        matrixController.startSingleImageView(matrix, path)
     elif choice == 3:
         cleanup(path)
+
     elif choice == 4:
         sys.exit()
 
