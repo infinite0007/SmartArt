@@ -60,7 +60,7 @@ def startDiashow(matrix,path,sleeptime):
                     setImage(matrix,img)
                     num +=1
                     time.sleep(sleeptime)
-                    FrameCanvas.Clear();
+                    setImage(matrix)
         except:
             
             retVal = input("q")
