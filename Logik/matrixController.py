@@ -18,8 +18,8 @@ def newestPic(path):
 
 def ClearMatrix():
     options = RGBMatrixOptions()
-    options.rows = 0
-    options.cols = 0
+    options.rows = 2
+    options.cols = 2
     options.chain_length = 1
     options.parallel = 1
     options.hardware_mapping = 'adafruit-hat'  # If you don't have an Adafruit HAT: 'regular'
@@ -70,7 +70,7 @@ def startDiashow(matrix,path,sleeptime):
                     setImage(matrix,img)
                     num +=1
                     time.sleep(sleeptime)
-                    setImage(ClearMatrix(),0,0,True)
+                    setImage(ClearMatrix(),2,2,True)
                     
         except KeyboardInterrupt:
             print('Kehre zum Hauptmenu zurueck...')
