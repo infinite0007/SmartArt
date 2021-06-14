@@ -2,7 +2,7 @@ import time
 import os
 import sys
 #Matrix imports
-from rgbmatrix import RGBMatrix, RGBMatrixOptions
+from rgbmatrix import RGBMatrix, RGBMatrixOptions, FrameCanvas
 
 #Image processing imports
 from PIL import Image
@@ -59,7 +59,8 @@ def startDiashow(matrix,path,sleeptime):
                 setImage(matrix,img)
                 num +=1
                 time.sleep(sleeptime)
-        
+                FrameCanvas.Clear();
+                
 def startSingleImageView(matrix,path):
     img = ""
     while True:
