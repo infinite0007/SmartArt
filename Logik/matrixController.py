@@ -10,6 +10,7 @@ from PIL import ImageFile
 
 #Secures that even truncated pictures can be loaded
 ImageFile.LOAD_TRUNCATED_IMAGES = True
+clearImg = "/home/pi/SmartArt/WebApp/public/ErrPics/blacksquare.png" 
 
 def newestPic(path):
     files = os.listdir(path)
@@ -43,7 +44,6 @@ def clearScreen(matrix, clearImg):
 def startDiashow(matrix,path,sleeptime):
     num = 0
     img = ""
-    clearImg = "/home/pi/SmartArt/WebApp/public/ErrPics/blacksquare.png" 
     #loop to iterate through the picture folder over and over //TODO: implement the event listener
     while True:
         try:
@@ -70,19 +70,26 @@ def startDiashow(matrix,path,sleeptime):
         except KeyboardInterrupt:
             print('Kehre zum Hauptmenu zurueck...')
             clearScreen(matrix, clearImg)         
-            time.sleep(3)
+            time.sleep(2)
             return main.main()  # finishing the loop
                 
 def startSingleImageView(matrix,path):
     img = ""
     while True:
-        if os.listdir(path) !=FileNotFoundError:
-            img = newestPic(path)
-            setImage(matrix,img)
-            time.sleep(3)           #3 secs of waiting time to wait for new pictures
-        else:
-            #img = "/home/salah/Pictures/critical_failure.jpeg"    
-            img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
-            setImage(matrix,img)
-            time.sleep(5)
-            break
+        try:
+            if os.listdir(path) !=FileNotFoundError:
+                img = newestPic(path)
+                setImage(matrix,img)
+                time.sleep(3)           #3 secs of waiting time to wait for new pictures
+            else:
+                #img = "/home/salah/Pictures/critical_failure.jpeg"    
+                img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
+                setImage(matrix,img)
+                time.sleep(5)
+                clearScreen(matrix, clearImg)         
+                break
+        except KeyboardInterrupt:
+            print('Kehre zum Hauptmenu zurueck...')
+            clearScreen(matrix, clearImg)         
+            time.sleep(2)
+            return main.main()  # finishing the loop
