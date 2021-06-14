@@ -70,7 +70,7 @@ def startDiashow(matrix,path,sleeptime):
                     setImage(matrix,img)
                     num +=1
                     time.sleep(sleeptime)
-                    setImage(matrix,0,0,True)
+                    setImage(matrix,64,64,True)
                     
         except:
             retVal = input("q um zum Hauptmenu zurueckzukehren\n")
