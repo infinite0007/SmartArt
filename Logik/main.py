@@ -1,4 +1,3 @@
-#!/usr/bin/env python3.8
 import matrixController
 import helper
 def main():
