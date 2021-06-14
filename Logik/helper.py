@@ -1,4 +1,5 @@
 import os
+import sys
 import matrixController
 
 def startUI():
@@ -74,13 +75,17 @@ def main():
                 matrixController.startDiashow(matrix, path,slt)
             else:
                 safety = strCheck("Sicher dass es so lang sein soll? (Y,y/N,n)\n")
-        try:
-            matrixController.startDiashow(matrix, path,slt)
-        except KeyboardInterrupt:
-            return main()
+
+            retVal = matrixController.startDiashow(matrix, path,slt)
+            if(retVal == 2):
+                main()
     elif choice == 2:
-        matrixController.startSingleImageView(matrix, path)
+        retVal = matrixController.startSingleImageView(matrix, path)
+        if(retVal == 2):
+            main()
     elif choice == 3:
         cleanup(path)
+    elif choice == 4:
+        sys.exit()
 
             
