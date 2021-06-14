@@ -59,7 +59,7 @@ def startDiashow(matrix,path,sleeptime):
                 # Make image fit our screen.
                 setImage(matrix,img)
                 time.sleep(5)
-                break
+                return 1
             while num < amount and amount != 0:
                 img = files[num].title().lower()
                 if os.listdir(path) !=[]:
@@ -72,8 +72,8 @@ def startDiashow(matrix,path,sleeptime):
             print('Kehre zum Hauptmenu zurueck...')
             clearScreen(matrix, clearImg)         
             time.sleep(2)
-            break  # finishing the loop
-            
+            return 2  # finishing the loop
+    return 0
                 
 def startSingleImageView(matrix,path):
     img = ""
@@ -89,9 +89,10 @@ def startSingleImageView(matrix,path):
                 setImage(matrix,img)
                 time.sleep(5)
                 clearScreen(matrix, clearImg)         
-                break
+                return 1
         except KeyboardInterrupt:
             print('Kehre zum Hauptmenu zurueck...')
             clearScreen(matrix, clearImg)         
             time.sleep(2)
-            return helper.main()  # finishing the loop
+            return 2  # finishing the loop
+    return 0
