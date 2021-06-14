@@ -1,4 +1,4 @@
 {
-    "python.analysis.extraPaths": ["./Logik","~/.local/bin"]
+    "python.analysis.extraPaths": ["./Logik","~/.local/lib/python3.7/site-packages"]
     
 }
