@@ -70,14 +70,12 @@ def startDiashow(matrix,path,sleeptime):
                     setImage(matrix,img)
                     num +=1
                     time.sleep(sleeptime)
-                    setImage(matrix,64,64,True)
+                    setImage(ClearMatrix(),0,0,True)
                     
-        except:
-            retVal = input("q um zum Hauptmenu zurueckzukehren\n")
-            if retVal == "q":
-                print('Kehre zum Hauptmenu zurueck...')
-                time.sleep(3)
-                return main.main()  # finishing the loop
+        except KeyboardInterrupt:
+            print('Kehre zum Hauptmenu zurueck...')
+            time.sleep(3)
+            return main.main()  # finishing the loop
                 
 def startSingleImageView(matrix,path):
     img = ""
