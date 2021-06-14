@@ -42,7 +42,6 @@ def startDiashow(matrix,path,sleeptime):
     #loop to iterate through the picture folder over and over //TODO: implement the event listener
     while True:
         try:
-
             #simple polling
             files = os.listdir(path)
             amount = len(files)
@@ -65,7 +64,8 @@ def startDiashow(matrix,path,sleeptime):
                     FrameCanvas.Clear();
         except:
             keyboard.is_pressed('q')  # if key 'q' is pressed
-            print('You Pressed A Key!')
+            print('Kehre zum Hauptmenu zurück...')
+            time.sleep(3)
             return main()  # finishing the loop
                 
 def startSingleImageView(matrix,path):
