@@ -16,6 +16,16 @@ def newestPic(path):
     paths = [os.path.join(path, basename) for basename in files]
     return max(paths, key=os.path.getctime)
 
+def ClearMatrix():
+    options = RGBMatrixOptions()
+    options.rows = 0
+    options.cols = 0
+    options.chain_length = 1
+    options.parallel = 1
+    options.hardware_mapping = 'adafruit-hat'  # If you don't have an Adafruit HAT: 'regular'
+    matrix = RGBMatrix(options = options)
+    return matrix
+
 def setOptions():
     # Configuration for the matrix
     options = RGBMatrixOptions()
@@ -60,7 +70,7 @@ def startDiashow(matrix,path,sleeptime):
                     setImage(matrix,img)
                     num +=1
                     time.sleep(sleeptime)
-                    RGBMatrix.Clear()
+                    setImage(matrix,0,0,True)
                     
         except:
             retVal = input("q um zum Hauptmenu zurueckzukehren\n")
