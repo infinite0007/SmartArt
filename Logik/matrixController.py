@@ -16,16 +16,6 @@ def newestPic(path):
     paths = [os.path.join(path, basename) for basename in files]
     return max(paths, key=os.path.getctime)
 
-def ClearMatrix():
-    options = RGBMatrixOptions()
-    options.rows = 2
-    options.cols = 2
-    options.chain_length = 1
-    options.parallel = 1
-    options.hardware_mapping = 'adafruit-hat'  # If you don't have an Adafruit HAT: 'regular'
-    matrix = RGBMatrix(options = options)
-    return matrix
-
 def setOptions():
     # Configuration for the matrix
     options = RGBMatrixOptions()
@@ -43,11 +33,17 @@ def setImage(matrix,img):
     # Make image fit our screen.
     image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
     matrix.SetImage(image.convert('RGB'))
-
+    
+def clearScreen(matrix, clearImg):
+    image = Image.open(clearImg)
+    # Make image fit our screen.
+    image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
+    matrix.SetImage(image.convert('RGB'))
 
 def startDiashow(matrix,path,sleeptime):
     num = 0
     img = ""
+    clearImg = "/home/pi/SmartArt/WebApp/public/ErrPics/blacksquare.png" 
     #loop to iterate through the picture folder over and over //TODO: implement the event listener
     while True:
         try:
@@ -70,8 +66,7 @@ def startDiashow(matrix,path,sleeptime):
                     setImage(matrix,img)
                     num +=1
                     time.sleep(sleeptime)
-                    setImage(ClearMatrix(),2,2,True)
-                    
+                    clearScreen(matrix, clearImg)         
         except KeyboardInterrupt:
             print('Kehre zum Hauptmenu zurueck...')
             time.sleep(3)
