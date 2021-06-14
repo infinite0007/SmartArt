@@ -67,7 +67,7 @@ def startDiashow(matrix,path,sleeptime):
             if retVal == "q":
                 print('Kehre zum Hauptmenu zurueck...')
                 time.sleep(3)
-                return main()  # finishing the loop
+                return main.main()  # finishing the loop
                 
 def startSingleImageView(matrix,path):
     img = ""
