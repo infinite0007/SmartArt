@@ -1,10 +1,10 @@
 import matrixController
 import helper
 def main():
-  #Festlegen des Pfades für die anzuzeigenden Bilder
+  #Festlegen des Pfades fuer die anzuzeigenden Bilder
     path = "/home/salah/SmartArt/WebApp/public/matrixPictures/"
     #path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
-    #setzen der Optionen für die 64x64 Matrix 
+    #setzen der Optionen fuer die 64x64 Matrix 
     matrix = matrixController.setOptions()
 
     helper.startUI()    
