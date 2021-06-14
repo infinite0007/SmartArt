@@ -2,7 +2,6 @@
 import time
 import os
 import main
-import keyboard
 #Matrix imports
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, FrameCanvas
 
@@ -64,10 +63,12 @@ def startDiashow(matrix,path,sleeptime):
                     time.sleep(sleeptime)
                     FrameCanvas.Clear();
         except:
-            keyboard.is_pressed('q')  # if key 'q' is pressed
-            print('Kehre zum Hauptmenu zurueck...')
-            time.sleep(3)
-            return main()  # finishing the loop
+            
+            retVal = input("q")
+            if retVal == "q":
+                print('Kehre zum Hauptmenu zurueck...')
+                time.sleep(3)
+                return main()  # finishing the loop
                 
 def startSingleImageView(matrix,path):
     img = ""
