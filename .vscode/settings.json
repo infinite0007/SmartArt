@@ -1,3 +1,4 @@
 {
-    "python.analysis.extraPaths": ["./Logik"]
+    "python.analysis.extraPaths": ["./Logik","~/.local/bin"]
+    
 }

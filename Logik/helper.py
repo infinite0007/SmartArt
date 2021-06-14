@@ -1,4 +1,4 @@
-#!/usr/bin/python3.8
+#!/usr/bin/env python3.8
 import os
 def startUI():
     print("=========================================")
@@ -6,7 +6,7 @@ def startUI():
     print("      Bitte einen Modus auswaehlen")
     print("      1 -   Diashow starten")
     print("      2 -   Neuestes Bild anzeigen")
-    print("      3 -   Alle Bilder entfernen (außer Beispielbilder)")
+    print("      3 -   Alle Bilder entfernen (ausser Beispielbilder)")
     print("=========================================")
 
 def intCheck(prompt):

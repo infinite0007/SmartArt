@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.8
 import time
 import os
 import main
@@ -64,7 +65,7 @@ def startDiashow(matrix,path,sleeptime):
                     FrameCanvas.Clear();
         except:
             keyboard.is_pressed('q')  # if key 'q' is pressed
-            print('Kehre zum Hauptmenu zurück...')
+            print('Kehre zum Hauptmenu zurueck...')
             time.sleep(3)
             return main()  # finishing the loop
                 
