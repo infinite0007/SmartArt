@@ -1,6 +1,7 @@
 import os
 import sys
 import matrixController
+import time
 
 def startUI():
     print("=========================================")
@@ -59,30 +60,35 @@ def main():
     path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
     #setzen der Optionen fuer die 64x64 Matrix 
     matrix = matrixController.setOptions()
-
-    startUI()    
-    
-    choice = startCheck("Was willst du tun?\n")
-    if choice == 1:
-        slt = intCheck("Waehle noch die Zeit (in Sekunden) zwischen den Bildern aus: \n")
-        #Fehlerabfrage bei viel zu langen Zeiten
-        while slt > (60*60*24):
-            print("Eingabe dauert laenger als 1 Tag!")
-            safety = strCheck("Sicher dass es so lang sein soll? (Y,y/N,n)\n")
-            if safety == "n":
-                slt = intCheck("Waehle eine andere Zeit (in Sekunden): \n")
-            elif safety =="y":
-                matrixController.startDiashow(matrix, path,slt)
-            else:
+    try:
+        startUI()    
+        
+        choice = startCheck("Was willst du tun?\n")
+        if choice == 1:
+            slt = intCheck("Waehle noch die Zeit (in Sekunden) zwischen den Bildern aus: \n")
+            #Fehlerabfrage bei viel zu langen Zeiten
+            while slt > (60*60*24):
+                print("Eingabe dauert laenger als 1 Tag!")
                 safety = strCheck("Sicher dass es so lang sein soll? (Y,y/N,n)\n")
-                
-        matrixController.startDiashow(matrix, path,slt)
-    elif choice == 2:
-        matrixController.startSingleImageView(matrix, path)
-    elif choice == 3:
-        cleanup(path)
+                if safety == "n":
+                    slt = intCheck("Waehle eine andere Zeit (in Sekunden): \n")
+                elif safety =="y":
+                    matrixController.startDiashow(matrix, path,slt)
+                else:
+                    safety = strCheck("Sicher dass es so lang sein soll? (Y,y/N,n)\n")
+                    
+            matrixController.startDiashow(matrix, path,slt)
+        elif choice == 2:
+            matrixController.startSingleImageView(matrix, path)
+        elif choice == 3:
+            cleanup(path)
 
-    elif choice == 4:
-        sys.exit()
+        elif choice == 4:
+            sys.exit()
+    except KeyboardInterrupt:
+        print('Kehre zum Hauptmenu zurueck...')
+        matrixController.clearScreen(matrix, matrixController.clearImg)         
+        time.sleep(2)
+        return main()  # finishing the loop
 
             

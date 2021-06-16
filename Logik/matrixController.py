@@ -45,49 +45,44 @@ def startDiashow(matrix,path,sleeptime):
     num = 0
     img = ""
     #loop to iterate through the picture folder over and over //TODO: implement the event listener
-    if not KeyboardInterrupt:
-        #simple polling
-        files = os.listdir(path)
-        amount = len(files)
-        num = 0
-        if amount == 0:
-            #img = "/home/salah/Pictures/critical_failure.jpeg"    
-            img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
-            image = Image.open(img)
-            # Make image fit our screen.
-            setImage(matrix,img)
-            time.sleep(5)
-            return helper.main()
-        while num < amount and amount != 0:
-            img = files[num].title().lower()
-            if os.listdir(path) !=[]:
-                img = path + img
+    while True:
+        try:
+            #simple polling
+            files = os.listdir(path)
+            amount = len(files)
+            num = 0
+            if amount == 0:
+                #img = "/home/salah/Pictures/critical_failure.jpeg"    
+                img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
+                image = Image.open(img)
+                # Make image fit our screen.
                 setImage(matrix,img)
-                num +=1
-                time.sleep(sleeptime)
-                clearScreen(matrix, clearImg)         
-    else:
-        print('Kehre zum Hauptmenu zurueck...')
-        clearScreen(matrix, clearImg)         
-        time.sleep(2)
-        return helper.main()  # finishing the loop
+                time.sleep(5)
+            while num < amount and amount != 0:
+                img = files[num].title().lower()
+                if os.listdir(path) !=[]:
+                    img = path + img
+                    setImage(matrix,img)
+                    num +=1
+                    time.sleep(sleeptime)
+                    clearScreen(matrix, clearImg)    
+        except KeyboardInterrupt:
+            break     
                 
 def startSingleImageView(matrix,path):
     img = ""
-    if not KeyboardInterrupt:
-        if os.listdir(path) !=FileNotFoundError:
-            img = newestPic(path)
-            setImage(matrix,img)
-            time.sleep(3)           #3 secs of waiting time to wait for new pictures
-        else:
-            #img = "/home/salah/Pictures/critical_failure.jpeg"    
-            img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
-            setImage(matrix,img)
-            time.sleep(5)
-            clearScreen(matrix, clearImg)   
-            return helper.main()  # finishing the loop
-    else:
-        print('Kehre zum Hauptmenu zurueck...')
-        clearScreen(matrix, clearImg)         
-        time.sleep(2)
-        return helper.main()  # finishing the loop
+    while True:
+        try:
+            if os.listdir(path) !=FileNotFoundError:
+                img = newestPic(path)
+                setImage(matrix,img)
+                time.sleep(3)           #3 secs of delay to wait for new pictures to be loaded
+            else:
+                #img = "/home/salah/Pictures/critical_failure.jpeg"    
+                img = "/home/pi/SmartArt/WebApp/public/ErrPics/criticalfailure.png"    
+                setImage(matrix,img)
+                time.sleep(5)
+                clearScreen(matrix, clearImg)   
+                return helper.main()  # finishing the loop
+        except KeyboardInterrupt:
+            break
