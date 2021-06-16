@@ -67,7 +67,10 @@ def startDiashow(matrix,path,sleeptime):
                     time.sleep(sleeptime)
                     clearScreen(matrix, clearImg)    
         except KeyboardInterrupt:
-            break     
+            print('Kehre zum Hauptmenu zurueck...')
+            clearScreen(matrix, clearImg)         
+            time.sleep(2)
+            break  # finishing the loop
                 
 def startSingleImageView(matrix,path):
     img = ""
@@ -85,4 +88,7 @@ def startSingleImageView(matrix,path):
                 clearScreen(matrix, clearImg)   
                 return helper.main()  # finishing the loop
         except KeyboardInterrupt:
-            break
+            print('Kehre zum Hauptmenu zurueck...')
+            clearScreen(matrix, clearImg)         
+            time.sleep(2)
+            break  # finishing the loop

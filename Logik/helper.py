@@ -10,6 +10,7 @@ def startUI():
     print("      1 -   Diashow starten")
     print("      2 -   Neuestes Bild anzeigen")
     print("      3 -   Alle Bilder entfernen (ausser Beispielbilder)")
+    print("      4 -   Programm beenden")
     print("=========================================")
 
 def intCheck(prompt):
@@ -32,7 +33,7 @@ def startCheck(prompt):
     while True:
         try:
             num = int(input(prompt))
-            return num if num == 1 or num == 2 or num == 3 else startCheck("Diese Auswahl existiert nicht, nochmal bitte:\n ")
+            return num if num == 1 or num == 2 or num == 3 or num == 4 else startCheck("Diese Auswahl existiert nicht, nochmal bitte:\n ")
         except ValueError as e:
             print("Diese Auswahl existiert nicht, nochmal bitte:\n")
             startUI()
@@ -60,7 +61,7 @@ def main():
     path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
     #setzen der Optionen fuer die 64x64 Matrix 
     matrix = matrixController.setOptions()
-    try:
+    while True:
         startUI()    
         
         choice = startCheck("Was willst du tun?\n")
@@ -82,13 +83,7 @@ def main():
             matrixController.startSingleImageView(matrix, path)
         elif choice == 3:
             cleanup(path)
-
         elif choice == 4:
             sys.exit()
-    except KeyboardInterrupt:
-        print('Kehre zum Hauptmenu zurueck...')
-        matrixController.clearScreen(matrix, matrixController.clearImg)         
-        time.sleep(2)
-        return main()  # finishing the loop
 
             
