@@ -9,6 +9,12 @@ There are several manufacturers of digital photo frames that all do the same thi
 Play back images previously saved on a memory card. To make this product more interesting, as part of a project work for the Systemadministration course, a system is to be created that scales the stored images into a smaller resolution and displays them on a simple LED matrix instead of on a screen. Due to the RGB with ~ 16 million colors, there are interesting possibilities here. We want to use it to make art more digital in order to bring technology-loving people closer to art - and vice versa.
 
 # Installation - Get started
+
+### `npm install`
+
+Install all dependencies.\
+Which are important before running the project.
+
 ## Raspberry
 1. Install Node.js on your Raspberry Pi.
    - npm install or npm i to install all dependency`s which are necessary to run our project.
@@ -16,11 +22,6 @@ Play back images previously saved on a memory card. To make this product more in
 
 ## WebApp
 ### To start the SmartArt Webapplication you need to run these following commands in directory: "SmartArt/WebApp"
-
-### `npm install`
-
-Install all dependencies.\
-Important before running the project.
 
 ### `npm start`
 **Easiest way to run SmartArt**
