@@ -8,19 +8,19 @@ export default class AboutApp extends React.Component {
     return (
       <div  className="aboutapp">
         <Container>
-          <h1 className="smallHeader">Wie bekomme ich ein Bild auf meine Matrix?</h1>
+          <h1 className="smallHeader">Wie funktioniert SmartArt?</h1>
           <Row>
             <Col xs={6} md={{ span: 4, offset: 2 }}>
               <DeepartCarousel/>
             </Col>
             <Col xs={6} md={4}>
               <p>
-                1. Clonen Sie sich das aktuelle Projekt über: <a href="https://github.com/" target="_blank">Github</a><br />
-                2. Wechseln sie in den Smartart Ordner<br />
-                3. Mit dem Befehl #npm install werden nun alle Dependencies heruntergeladen<br />
-                4. Im Ordner WebApp kann nun mit dem Befehl #npm start der Server zeitgleich mit der Website gestartet werden<br />
-                5. Die Website steht nun in ihrem Netz unter der in dem in der Konsole genannten Link zur verfügung<br />
-                6. Nun kann das Menü im Logik Ordner der Matrix mithilfe des Befehls #sudo python3 main.py gestartet werden
+                Die SmartArt WebApp dient dazu, Bilder über die LED-Matrix zu steuern.
+                Laden Sie ein gewünschtes Bild hoch und lassen sie es direkt anzeigen.<br /><br />
+                Auch kann ganz künstlerisch verschiedene Bilder mit Stilen kombiniert werden.
+                Wenn gewünscht können diese auch direkt auf die Matrix projiziert werden.
+                So können ganz neue Kunstwerke entstehen und Künstler wieder zum Leben erweckt werden!<br /><br />
+                Sie verfügen über jegliche Freiheiten, wie und vor allem was auf der Matrix erscheinen soll.
               </p>
             </Col>
           </Row>
