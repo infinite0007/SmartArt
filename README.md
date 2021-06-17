@@ -15,7 +15,7 @@ Play back images previously saved on a memory card. To make this product more in
 
 
 ## WebApp
-### To start the SmartArt Webapplication you need to run these following commands:
+### To start the SmartArt Webapplication you need to run these following commands in directory"*SmartArt/WebApp*":
 
 ### `npm install`
 
