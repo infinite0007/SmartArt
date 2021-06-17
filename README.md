@@ -24,7 +24,7 @@ Some soldering is needed!
 
 Install [Node.js](https://maker-tutorials.com/node-js-raspberry-pi-installieren/) on your Raspberry Pi.  
 
-In the main directory: "SmartArt/"  
+In the main directory: "*SmartArt/*"  
 
 ### `npm install`
 
@@ -75,7 +75,7 @@ as it provides a way faster execution.
 
 
 # WebApp
-### To start the SmartArt Webapplication you need to run these following commands in directory: "SmartArt/WebApp"
+### To start the SmartArt Webapplication you need to run these following commands in directory: "*SmartArt/WebApp/*"
 
 ### `npm start`
 **Easiest way to run SmartArt**
