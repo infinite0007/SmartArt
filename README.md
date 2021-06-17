@@ -75,8 +75,8 @@ as it provides a way faster execution.
 
 
 # WebApp
-**Easiest way to run the SmartArt WebApp**
-### To start the SmartArt Webapplication you need to run the following command in directory: *"SmartArt/WebApp/"*
+### Easiest way to run the SmartArt WebApp
+**To start the SmartArt Webapplication you need to run the following command in directory: *"SmartArt/WebApp/"* **
 
 ### `npm start`
 
