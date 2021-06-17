@@ -10,5 +10,32 @@ Play back images previously saved on a memory card. To make this product more in
 
 ## Installation - Get started
 ### Raspberry
-1. Open...
-   - Install Node.js
+1. Install Node.js on your Raspberry Pi.
+   - npm install or npm i to install all dependency`s which are necessary to run our project.
+
+
+### WebApp
+#### To start the SmartArt Webapplication you need to run these following commands:
+
+### `npm install`
+
+Install all dependencies.\
+Important before running the project.
+
+### `npm start`
+**Easiest way to run SmartArt**
+
+Runs the SmartArt-Server **plus** the WebApp with one command.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `npm run dev`
+
+Runs the app only. (Without server)\
+Open [http://localhost:3000](http://localhost:3000)\
+or\
+http://RaspberryIP:3000 to view it in the browser.
+
+### `npm server.js`
+
+Launches the SmartArt-Server only. (Without the app)\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
