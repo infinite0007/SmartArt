@@ -10,7 +10,7 @@ Play back images previously saved on a memory card. To make this product more in
 
 # Installation - Get started
 
-In the main directory: "SmartArt/"
+##In the main directory: "SmartArt/"
 
 ### `npm install`
 
