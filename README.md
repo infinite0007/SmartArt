@@ -10,9 +10,11 @@ Play back images previously saved on a memory card. To make this product more in
 
 # Installation - Get started
 
+In the main directory: "SmartArt/"
+
 ### `npm install`
 
-Install all dependencies.\
+To install all dependencies,\
 Which are important before running the project.
 
 ## Raspberry
