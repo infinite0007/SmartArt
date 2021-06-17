@@ -16,7 +16,7 @@ export default function Cards() {
           <ul className="cards__items">
            <CardItem
               src={Image1}
-              text="Informiere dich wie SmartArt funktioniert und wie du ein gewünschtes Foto auf die Matrix projizieren kannst"
+              text="Informiere dich wozu die SmartArt WebApp dient"
               label="Über SmartArt"
               path="/app"
             />
