@@ -67,7 +67,7 @@ The duration of how long each image is displayed can be specified via a paramete
 The slide show can be expanded to include images at runtime.    
   
   
-All the Code for driving the matrix is found in the /Logik folder.  
+All the Code for driving the matrix is found in the */Logik* folder.  
 Feel free to use it. It is derived from hzeller's [rpi-rgb-led-matrix library](https://github.com/hzeller/rpi-rgb-led-matrix) found on github, where you can check for further informations.  
 There are also bindings for C# and C available.  
 It is also possible to write your program directly in C++ which is recommended  
