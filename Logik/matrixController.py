@@ -23,7 +23,7 @@ def setOptions():
     options.rows = 64
     options.cols = 64
     options.chain_length = 1
-    options.brightness = 80
+    options.brightness = 85
     options.parallel = 1
     options.hardware_mapping = 'adafruit-hat'  # If you don't have an Adafruit HAT: 'regular'
 
