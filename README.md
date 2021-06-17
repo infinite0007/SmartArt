@@ -81,7 +81,9 @@ as it provides a way faster execution.
 **Easiest way to run SmartArt**
 
 Runs the SmartArt-Server **plus** the WebApp with one command.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000)\
+or\
+http://RaspberryIP:3000 to view it in the browser.
 
 ### `npm run dev`
 
