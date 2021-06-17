@@ -15,7 +15,7 @@ For the project you will need the specific hardware from the following links:
 [64x64 RGB LED Matrix](https://www.adafruit.com/product/4732)  
 [Raspberry Pi 3](https://www.adafruit.com/product/3055)  
 [Power supply 5V 10A](https://www.adafruit.com/product/658) or at least 5V 4A as the matrix consumes a LOT of power.  
-Make sure you dont go over 5V though.
+Make sure you don`t go over 5V though.
 
 To set up the project's basic configuration simply follow the [Adafruit tutorial](https://learn.adafruit.com/raspberry-pi-led-matrix-display/hardware).  
 Some soldering is needed!  
@@ -30,13 +30,13 @@ In the main directory: "SmartArt/"
 
 To install all dependencies, which are important before running the project.
 
-## Raspberry
-When the basic stuff is up and running, simply clone the repository to a folder on your raspberry.  
+# Raspberry
+When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.  
 cd into */SmartArt/Logik* and run the command  
 *`sudo python3 SmartArt.py`*  
 The main menu should appear in the console and show options for what is yet possible with the program.  
 
-# The matrixController module
+## The matrixController module
 This module contains the functions for setting the matrix options.  
 These come from the Python binding of the rpi-rgb-led-matrix-library.  
 `setOptions ():` Here you can define the size of the matrix, how many matrices  
@@ -46,22 +46,22 @@ have been linked, and the hardware mapping.
 `startDiashow ():` starts the slide show on the matrix  
 `startSingleImageView()` Starts the single image display on the matrix  
 
-## The helper module
+### The helper module
 The auxiliary functions for the program are located in this module.  
 `startUI ():` outputs the selection options on the console when the program is started  
 `intCheck () strCheck () and startCheck ():` are auxiliary functions for exception handling in the event of incorrect user entries.  
 `deleteAllPics ():` Deletes all pictures from the user folder except for the sample images.  
 
-## The SmartArt module
+### The SmartArt module
 The SmartArt module serves as the starting point for the program.  
 It starts with a console output that leads through a small user menu to select the display modes.  
 
-# Display modes
+## Display modes
 Two different modes were planned that can be called up.
-## The single image view mode:
+### The single image view mode:
 In this mode, only the last uploaded image should be displayed. This was implemented by the program monitoring the folder,  
 which acts as a common interface, and always setting the image to be displayed to the last changed one during runtime.
-## The slide show mode
+### The slide show mode
 In this mode, all images in the matrixPictures folder are displayed in sequence.  
 The duration of how long each image is displayed can be specified via a parameter when the program is started.  
 The slide show can be expanded to include images at runtime.    
@@ -74,7 +74,7 @@ It is also possible to write your program directly in C++ which is recommended
 as it provides a way faster execution.
 
 
-## WebApp
+# WebApp
 ### To start the SmartArt Webapplication you need to run these following commands in directory: "SmartArt/WebApp"
 
 ### `npm start`
