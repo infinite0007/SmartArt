@@ -14,8 +14,7 @@ In the main directory: "SmartArt/"
 
 ### `npm install`
 
-To install all dependencies,\
-Which are important before running the project.
+To install all dependencies, which are important before running the project.
 
 ## Raspberry
 1. Install Node.js on your Raspberry Pi.
