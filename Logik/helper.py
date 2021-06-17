@@ -1,7 +1,7 @@
-
-import time
 import os
-import glob
+import sys
+import matrixController
+import time
 
 def startUI():
     print("=========================================")
@@ -9,7 +9,8 @@ def startUI():
     print("      Bitte einen Modus auswaehlen")
     print("      1 -   Diashow starten")
     print("      2 -   Neuestes Bild anzeigen")
-    print("      3 -   Alle Bilder entfernen (außer Beispielbilder)")
+    print("      3 -   Alle Bilder entfernen (ausser Beispielbilder)")
+    print("      4 -   Programm beenden")
     print("=========================================")
 
 def intCheck(prompt):
@@ -32,14 +33,14 @@ def startCheck(prompt):
     while True:
         try:
             num = int(input(prompt))
-            return num if num == 1 or num == 2 or num == 3 else startCheck("Diese Auswahl existiert nicht, nochmal bitte:\n ")
+            return num if num == 1 or num == 2 or num == 3 or num == 4 else startCheck("Diese Auswahl existiert nicht, nochmal bitte:\n ")
         except ValueError as e:
             print("Diese Auswahl existiert nicht, nochmal bitte:\n")
             startUI()
 
-def cleanup():
-    file_path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
-    fileList = os.listdir(file_path)
+def cleanup(path):
+    #file_path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
+    fileList = os.listdir(path)
     for fileName in fileList:
         if fileName == 'goa.jpg':
             continue
@@ -48,8 +49,41 @@ def cleanup():
         else:
             try:
                 print(fileName + " was successfully removed")
-                os.remove(file_path + fileName)
+                os.remove(path + fileName)
+                return main()
                 
             except FileNotFoundError:
                 print(fileName)
-                continue
+                return main()
+def main():
+  #Festlegen des Pfades fuer die anzuzeigenden Bilder
+    #path = "/home/salah/SmartArt/WebApp/public/matrixPictures/"
+    path = "/home/pi/SmartArt/WebApp/public/matrixPictures/"
+    #setzen der Optionen fuer die 64x64 Matrix 
+    matrix = matrixController.setOptions()
+    while True:
+        startUI()    
+        
+        choice = startCheck("Was willst du tun?\n")
+        if choice == 1:
+            slt = intCheck("Waehle noch die Zeit (in Sekunden) zwischen den Bildern aus: \n")
+            #Fehlerabfrage bei viel zu langen Zeiten
+            while slt > (60*60*24):
+                print("Eingabe dauert laenger als 1 Tag!")
+                safety = strCheck("Sicher dass es so lang sein soll? (Y,y/N,n)\n")
+                if safety == "n":
+                    slt = intCheck("Waehle eine andere Zeit (in Sekunden): \n")
+                elif safety =="y":
+                    matrixController.startDiashow(matrix, path,slt)
+                else:
+                    safety = strCheck("Sicher dass es so lang sein soll? (Y,y/N,n)\n")
+                    
+            matrixController.startDiashow(matrix, path,slt)
+        elif choice == 2:
+            matrixController.startSingleImageView(matrix, path)
+        elif choice == 3:
+            cleanup(path)
+        elif choice == 4:
+            sys.exit()
+
+            
