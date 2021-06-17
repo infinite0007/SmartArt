@@ -23,6 +23,7 @@ def setOptions():
     options.rows = 64
     options.cols = 64
     options.chain_length = 1
+    options.brightness = 80
     options.parallel = 1
     options.hardware_mapping = 'adafruit-hat'  # If you don't have an Adafruit HAT: 'regular'
 
@@ -44,7 +45,7 @@ def clearScreen(matrix, clearImg):
 def startDiashow(matrix,path,sleeptime):
     num = 0
     img = ""
-    #loop to iterate through the picture folder over and over //TODO: implement the event listener
+    #loop to iterate through the picture folder over and over 
     while True:
         try:
             #simple polling
@@ -58,6 +59,7 @@ def startDiashow(matrix,path,sleeptime):
                 # Make image fit our screen.
                 setImage(matrix,img)
                 time.sleep(5)
+                break
             while num < amount and amount != 0:
                 img = files[num].title().lower()
                 if os.listdir(path) !=[]:
@@ -67,16 +69,22 @@ def startDiashow(matrix,path,sleeptime):
                     time.sleep(sleeptime)
                     clearScreen(matrix, clearImg)    
         except KeyboardInterrupt:
-            print('Kehre zum Hauptmenu zurueck...')
+            print('\nKehre zum Hauptmenu zurueck...')
             clearScreen(matrix, clearImg)         
-            time.sleep(2)
+            time.sleep(1)
+            break  # finishing the loop
+        except FileNotFoundError:
+            print('\nBild nicht gefunden. Ueberpruefe ob Bilder im Ordner vorhanden sind!')
+            print('\nKehre zum Hauptmenu zurueck...')
+            clearScreen(matrix, clearImg)         
+            time.sleep(1)
             break  # finishing the loop
                 
 def startSingleImageView(matrix,path):
     img = ""
     while True:
         try:
-            if os.listdir(path) !=FileNotFoundError:
+            if os.listdir(path) != FileNotFoundError:
                 img = newestPic(path)
                 setImage(matrix,img)
                 time.sleep(3)           #3 secs of delay to wait for new pictures to be loaded
@@ -86,9 +94,15 @@ def startSingleImageView(matrix,path):
                 setImage(matrix,img)
                 time.sleep(5)
                 clearScreen(matrix, clearImg)   
-                return helper.main()  # finishing the loop
+                break  # finishing the loop
         except KeyboardInterrupt:
             print('Kehre zum Hauptmenu zurueck...')
             clearScreen(matrix, clearImg)         
-            time.sleep(2)
+            time.sleep(1)
+            break  # finishing the loop
+        except FileNotFoundError:
+            print('\nBild nicht gefunden. Ueberpruefe ob Bilder im Ordner vorhanden sind!')
+            print('\nKehre zum Hauptmenu zurueck...')
+            clearScreen(matrix, clearImg)         
+            time.sleep(1)
             break  # finishing the loop
