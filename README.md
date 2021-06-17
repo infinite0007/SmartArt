@@ -32,7 +32,7 @@ To install all dependencies, which are important before running the project.
 
 # Raspberry
 When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.  
-cd into */SmartArt/Logik* and run the command  
+cd into *"/SmartArt/Logik"* and run the command  
 *`sudo python3 SmartArt.py`*  
 The main menu should appear in the console and show options for what is yet possible with the program.  
 
