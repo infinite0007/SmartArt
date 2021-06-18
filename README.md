@@ -21,9 +21,10 @@ To set up the project's basic configuration simply follow the [Adafruit tutorial
 Some soldering is needed!  
 
 # Installation - Get started
-When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.
 
-Install [Node.js](https://maker-tutorials.com/node-js-raspberry-pi-installieren/) on your Raspberry Pi.  
+Install [Node.js](https://maker-tutorials.com/node-js-raspberry-pi-installieren/) on your Raspberry Pi. 
+
+When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.
 
 In the WebApp directory: *"SmartArt/WebApp/"*  
 
