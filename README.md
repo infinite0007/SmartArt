@@ -22,7 +22,7 @@ Some soldering is needed!
 
 # Installation - Get started
 
-Install [Node.js](https://maker-tutorials.com/node-js-raspberry-pi-installieren/) on your Raspberry Pi. 
+Install [Node.js](https://maker-tutorials.com/node-js-raspberry-pi-installieren/) on your Raspberry Pi. All versions are listed on the official [Node.js](https://nodejs.org/en/download/) page 
 
 When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.
 
