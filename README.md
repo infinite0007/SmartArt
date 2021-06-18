@@ -26,7 +26,7 @@ Some soldering is needed!
 
 When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.
 
-In the WebApp directory: *"SmartArt/WebApp/"*  
+In the WebApp directory: *"SmartArt/WebApp/"* run the following command: 
 
 ### `npm install`
 
