@@ -21,6 +21,7 @@ To set up the project's basic configuration simply follow the [Adafruit tutorial
 Some soldering is needed!  
 
 # Installation - Get started
+When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.
 
 Install [Node.js](https://maker-tutorials.com/node-js-raspberry-pi-installieren/) on your Raspberry Pi.  
 
@@ -30,8 +31,7 @@ In the WebApp directory: *"SmartArt/WebApp/"*
 
 To install all dependencies, which are important before running the project.
 
-# Raspberry
-When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.  
+# Raspberry  
 cd into *"SmartArt/Logik"* and run the following command:  
 *`sudo python3 SmartArt.py`*  
 The main menu should appear in the console and show options for what is yet possible with the program.  
