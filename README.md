@@ -38,8 +38,10 @@ In the WebApp directory: *"SmartArt/WebApp/"* run the following command:
 To install all dependencies, which are important before running the project.
 
 # Raspberry  
-cd into *"SmartArt/Logik"* and run the following command:  
-*`sudo python3 SmartArt.py`*  
+cd into *"SmartArt/Logik"* and run the following command:
+
+*`sudo python3 SmartArt.py`*
+
 The main menu should appear in the console and show options for what is yet possible with the program.  
 
 ## The matrixController module
