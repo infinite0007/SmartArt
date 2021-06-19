@@ -25,7 +25,8 @@ Some soldering is needed!
 [Install](https://maker-tutorials.com/node-js-raspberry-pi-installieren/) Node.js on your Raspberry Pi. All versions are listed on the official [Node.js](https://nodejs.org/en/download/) page 
 
 When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.  
-The first thing to do is set the user rights in the folder /Webapp/public/matrixPictures to 777 by using the console command **chmod 777 matrixPictures**  
+The first thing to do is set the user rights in the folder /Webapp/public/matrixPictures to 777 by using the console command  
+***chmod 777 matrixPictures***  
 
 In the WebApp directory: *"SmartArt/WebApp/"* run the following command: 
 
