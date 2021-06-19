@@ -26,7 +26,9 @@ Some soldering is needed!
 
 When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.  
 The first thing to do is set the user rights. In the folder *"SmartArt/WebApp/public/"* run the console command:
+
 *`sudo chmod -R 777 matrixPictures/`*
+
 Otherwise the option in menu to delete pictures isn`t possible.
 
 In the WebApp directory: *"SmartArt/WebApp/"* run the following command: 
