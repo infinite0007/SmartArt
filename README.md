@@ -33,7 +33,7 @@ Otherwise the option in menu to delete pictures isn`t possible.
 
 In the WebApp directory: *"SmartArt/WebApp/"* run the following command: 
 
-### `npm install`
+*`npm install`*
 
 To install all dependencies, which are important before running the project.
 
@@ -86,7 +86,7 @@ as it provides a way faster execution.
 ## Easiest way to run the SmartArt WebApp
 ### To start the SmartArt Webapplication you need to run the following command in directory: *"SmartArt/WebApp/"*
 
-### `npm start`
+*`npm start`*
 
 Runs the SmartArt-Server **plus** the WebApp with one command.\
 Open [http://localhost:3000](http://localhost:3000)\
