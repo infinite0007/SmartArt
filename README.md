@@ -37,6 +37,10 @@ In the WebApp directory: *"SmartArt/WebApp/"* run the following command:
 
 To install all dependencies, which are important before running the project.
 
+Also you need to change the Deep Art Effects API Access Key under: *"SmartArt/WebApp/src/js/config/apiConstants.js"* change the Access-Key to yours under [DeepArtEffects](https://developer.deeparteffects.com/):
+
+![image](https://user-images.githubusercontent.com/50872737/123540354-d8318400-d73e-11eb-9206-41e596724dfc.png)
+
 # Raspberry  
 cd into *"SmartArt/Logik"* and run the following command:
 
