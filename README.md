@@ -22,18 +22,30 @@ Some soldering is needed!
 
 # Installation - Get started
 
-Install [Node.js](https://maker-tutorials.com/node-js-raspberry-pi-installieren/) on your Raspberry Pi.  
+[Install](https://maker-tutorials.com/node-js-raspberry-pi-installieren/) Node.js on your Raspberry Pi. All versions are listed on the official [Node.js](https://nodejs.org/en/download/) page 
 
-In the WebApp directory: *"SmartArt/WebApp/"*  
+When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.  
+The first thing to do is set the user rights. In the folder *"SmartArt/WebApp/public/"* run the console command:
 
-### `npm install`
+*`sudo chmod -R 777 matrixPictures/`*
+
+Otherwise the option in menu to delete pictures isn`t possible.
+
+In the WebApp directory: *"SmartArt/WebApp/"* run the following command: 
+
+*`npm install`*
 
 To install all dependencies, which are important before running the project.
 
-# Raspberry
-When the basic stuff is up and running, simply clone the repository to a folder on your Raspberry Pi.  
-cd into *"SmartArt/Logik"* and run the following command:  
-*`sudo python3 SmartArt.py`*  
+Also you need to change the Deep Art Effects API Access Key under: *"SmartArt/WebApp/src/js/config/apiConstants.js"* change the Access-Key to yours under [DeepArtEffects](https://developer.deeparteffects.com/):
+
+![image](https://user-images.githubusercontent.com/50872737/123540354-d8318400-d73e-11eb-9206-41e596724dfc.png)
+
+# Raspberry  
+cd into *"SmartArt/Logik"* and run the following command:
+
+*`sudo python3 SmartArt.py`*
+
 The main menu should appear in the console and show options for what is yet possible with the program.  
 
 ## The matrixController module
@@ -76,9 +88,9 @@ as it provides a way faster execution.
 
 # WebApp
 ## Easiest way to run the SmartArt WebApp
-### To start the SmartArt Webapplication you need to run the following command in directory: *"SmartArt/WebApp/"*
+To start the SmartArt Webapplication you need to run the following command in directory: *"SmartArt/WebApp/"*
 
-### `npm start`
+*`npm start`*
 
 Runs the SmartArt-Server **plus** the WebApp with one command.\
 Open [http://localhost:3000](http://localhost:3000)\
